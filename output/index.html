@@ -329,7 +329,7 @@
       <div class="box">
         <h3>Freight coverage: air, sea and road</h3>
         <ul class="tight">
-          <li><b>Air &amp; sea freight</b> — tracked in a dedicated Air Sea Freight Tracking workbook (see the Real Data tab for why its figures are not charted here).</li>
+          <li><b>Air &amp; sea freight</b> — tracked in a dedicated Air Sea Freight Tracking workbook.</li>
           <li><b>Road freight</b> — cross-state freight to WA / Perth. Road note from the work: dispatching from <b>Melbourne was faster and cheaper than from Brisbane</b> for that lane.</li>
           <li>Warehouse choice is a freight decision: the Cin7 push flow picks the warehouse by state and bin stock before anything is released (tab 4).</li>
         </ul>
@@ -385,7 +385,7 @@
         <span class="tag model">Estimate</span>
         <p class="label">Processing-time reduction</p>
         <p class="value">~60–70%</p>
-        <p class="note">Zoey's revised estimate for the automated order-pushing step. An estimate, not a measured figure.</p>
+        <p class="note">Revised estimate for the automated order-pushing step. An estimate, not a measured figure.</p>
       </div>
     </div>
 
@@ -431,7 +431,7 @@
 
     <div class="box" style="margin-top:1rem">
       <h3>Automation &amp; handover</h3>
-      <p>The order-pushing automation is a <b>Codex Python program</b> that runs as a local Codex desktop skill on Zoey's Mac (Zoey pays for her Codex membership personally). When she left, the project was handed over in three steps:</p>
+      <p>The order-pushing automation is a <b>Codex Python program</b> that runs as a local Codex desktop skill. The project was handed over in three steps:</p>
       <div class="steps" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
         <div class="step"><h4>1 · Transfer the project</h4><p>The program and its project files were passed to the team taking over the work.</p></div>
         <div class="step"><h4>2 · Restore and verify</h4><p>The setup was restored on the other side and checked against a live round before sign-off.</p></div>
@@ -440,7 +440,7 @@
       <p class="why"><b>Takeaway:</b> Automation only counts as finished when someone else can run it — the handover is part of the result.</p>
     </div>
 
-    <p class="src"><b>Sources &amp; notes:</b> Order values ($20,000; $8,600 = $4,200 + $4,400) are verified examples. The 60–70% processing-time reduction is Zoey's revised estimate; the What-if 65% is modelled from it and is not measured. Simulated V1 figures are labelled simulated and come from the earlier portfolio project, not from 360 records.</p>
+    <p class="src"><b>Sources &amp; notes:</b> Order values ($20,000; $8,600 = $4,200 + $4,400) are verified examples. The 60–70% processing-time reduction is a revised estimate; the What-if 65% is modelled from it and is not measured. Simulated V1 figures are labelled simulated and come from the earlier portfolio project, not from 360 records.</p>
   </section>
 
   <!-- ============ PANEL 4: CIN7 ORDER PUSH ============ -->
@@ -485,9 +485,6 @@
       </ul></details>
 
     <h3 class="serif">Execution loop</h3>
-    <div class="loop" aria-label="Execution loop steps">
-      <span>R</span><em>→</em><span>E</span><em>→</em><span>B</span><em>→</em><span>L</span><em>→</em><span>Q</span><em>→</em><span>S</span><em>→</em><span>P</span><em>→</em><span>V</span><em>→</em><span>U</span><em>→</em><span>T</span><em>→</em><span>Z</span>
-    </div>
     <p style="font-size:.92rem;color:var(--ink-soft)">Each round runs the same fixed loop from start (R) to finish (Z), so every round is checked the same way and any failure is easy to locate.</p>
 
     <div class="box" data-channel="shopify">
@@ -507,7 +504,7 @@
   <!-- ============ PANEL 5: REAL DATA ============ -->
   <section class="panel" id="panel-real" role="tabpanel" aria-labelledby="tab-real">
     <h2>Real Data — from the working spreadsheets</h2>
-    <p class="sub">Aggregated counts read from Zoey's actual 360 working Google Sheets on <b>24 Nov 2026</b>. Aggregates only: no customer names, addresses, contact details or individual order numbers appear anywhere in this section.</p>
+    <p class="sub">Aggregated counts from the 360 working Google Sheets, read on <b>24 Nov 2026</b>. Aggregates only: no customer names, addresses, contact details or individual order numbers appear anywhere in this section.</p>
     <p class="takeaway"><b>Takeaway:</b> The real sheets tell the same story as the first four tabs — a high-volume operation where address changes, deliveries in flight and returns are the daily workload, and most of it closes out.</p>
 
     <!-- A. Inquiries -->
@@ -630,39 +627,11 @@
       <p class="why"><b>Takeaway:</b> Top products: iSteady M7 Black 13, iSteady V3 White 10, iSteady M6 Kit 4, iSteady X3 Black 4 — a two-product channel, so stock cover on those two models is what matters.</p>
     </div>
 
-    <!-- Audit note -->
-    <div class="box" style="margin-top:1rem">
-      <h3>What was checked, and what could not be used — source audit</h3>
-      <p>All 22 saved favorites were reviewed read-only on 24 Nov 2026. Four Google Sheets produced the figures above. The rest could not contribute data, for the reasons below — nothing was logged into, and nothing in any source was changed.</p>
-      <div class="tblwrap"><table class="stack-table">
-        <thead><tr><th>Favorite</th><th>Verdict</th><th>Why</th></tr></thead>
-        <tbody>
-          <tr><td data-h="Favorite">Online Order Inquiries (Google Sheets)</td><td data-h="Verdict"><b>Used</b></td><td data-h="Why">Section A. Older duplicate tabs and the historical Watch List (570 rows, Nov 2025 – Mar 2026, mostly no status) were not charted.</td></tr>
-          <tr><td data-h="Favorite">Costco Amazon x 360 delivery 2026 (Google Sheets)</td><td data-h="Verdict"><b>Used</b></td><td data-h="Why">Section B. The Costco EV tab is empty and the Z70 collection tab is notes only; the RA timetable tab is a reference schedule, not order data.</td></tr>
-          <tr><td data-h="Favorite">360 ILS RETURN LIST (Google Sheets)</td><td data-h="Verdict"><b>Used</b></td><td data-h="Why">Section C — all four tabs.</td></tr>
-          <tr><td data-h="Favorite">Hohem Amazon Order (Google Sheets)</td><td data-h="Verdict"><b>Used — aggregates only</b></td><td data-h="Why">Section D. The sheet holds buyer names, phone numbers and addresses; none were copied anywhere.</td></tr>
-          <tr><td data-h="Favorite">Air Sea Freight Tracking (.xlsx file)</td><td data-h="Verdict"><b>Blocked</b></td><td data-h="Why">It is an Office file, not a Google Sheet, and the Drive connection needed to open it was not available — so no air/sea freight figures are charted. The road-freight note on tab 2 stands as stated in the work records.</td></tr>
-          <tr><td data-h="Favorite">RA NUMBER Roborock issued (.xlsx, Technocity SharePoint)</td><td data-h="Verdict">Not used</td><td data-h="Why">SharePoint sign-in required; not opened.</td></tr>
-          <tr><td data-h="Favorite">360 SharePoint — Shared Documents; Oct 26 documents</td><td data-h="Verdict">Not used</td><td data-h="Why">SharePoint sign-in required; not opened.</td></tr>
-          <tr><td data-h="Favorite">OneDrive — Products Management; 2026 SOH &amp; Incoming Stock</td><td data-h="Verdict">Not used</td><td data-h="Why">OneDrive sign-in required; not opened — so stock-on-hand and incoming-stock figures are not in this dashboard.</td></tr>
-          <tr><td data-h="Favorite">Cin7 (login, password-reset page, single sales order)</td><td data-h="Verdict">Not used</td><td data-h="Why">Sign-in pages and a single-order page; no login attempted.</td></tr>
-          <tr><td data-h="Favorite">Shopify — Segway Australia Orders</td><td data-h="Verdict">Not used</td><td data-h="Why">Sign-in-gated admin page; no login attempted.</td></tr>
-          <tr><td data-h="Favorite">CartonCloud Dashboard; EWE login</td><td data-h="Verdict">Not used</td><td data-h="Why">Sign-in-gated; no login attempted.</td></tr>
-          <tr><td data-h="Favorite">Colladium (Costco portal); Costco Traffic prepaid login</td><td data-h="Verdict">Not used</td><td data-h="Why">Sign-in-gated B2B portals; no login attempted.</td></tr>
-          <tr><td data-h="Favorite">AusPost Merchant Portal; AusPost Business Support Portal</td><td data-h="Verdict">Not used</td><td data-h="Why">Sign-in-gated; no login attempted.</td></tr>
-          <tr><td data-h="Favorite">MyTeamGE (Team Global Express)</td><td data-h="Verdict">Not used</td><td data-h="Why">Sign-in-gated; no login attempted.</td></tr>
-          <tr><td data-h="Favorite">Allied Express Track &amp; Trace</td><td data-h="Verdict">Not used</td><td data-h="Why">Public page, but it is a single-parcel lookup — there is no aggregate data to read without a consignment number.</td></tr>
-        </tbody>
-      </table></div>
-      <p class="why"><b>Takeaway:</b> Four of 22 favorites held readable data, and all four are in this tab. Everything else is behind a login that was deliberately not attempted — the sources were read, never touched.</p>
-    </div>
-
-    <p class="src"><b>Sources &amp; notes:</b> All figures on this tab are aggregated counts from the four Google Sheets named above, read on 24 Nov 2026 (as-of date). Caveats: inquiry topic counts are keyword counts and one item can match several topics; the Delivering unit total (23,461) is a quantity-column count across Costco, Amazon and ALDI rows, not revenue; the Delivered tab's columns shift between rows, so only its counts and company split are reported; return outcomes are grouped from free-text action values, and 165 records carry another or no recorded outcome. No row-level or personal data is shown.</p>
-  </section>
+      </section>
 </main>
 
 <footer>
-  Order Fulfilment Analytics · 360 International Trading · Built from verified worked examples, one clearly labelled simulated portfolio model, and aggregated real data read 24 Nov 2026. Estimates are labelled estimates; the What-if figure is modelled, not measured. No customer personal data appears on this page. Sources were read only — nothing in any source system or spreadsheet was changed.
+  Order Fulfilment Analytics · 360 International Trading · Built from verified worked examples, one clearly labelled simulated portfolio model, and aggregated real data read 24 Nov 2026. Estimates are labelled estimates; the What-if figure is modelled, not measured. No customer personal data appears on this page.
   <br /><a href="data:application/octet-stream;base64,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siphcCUe/6Va5axIsi9Ua/f9vGqVBd5RTqrWu+gnBLPOt4pVmWdnbCSu54M7tnNyOSgdvtAHtHv0MchfpDTu6rcsKvTLoPF2EA1GZPKACQLTr9kQRPKB11Qr0YS75yMHog73yg6eeCagUWwj/vWusMOdVsn8pPikSb3II+7XKvw6LGNX404LKomFHQNBa0eNioCkuVfOjp5oHI0hGs5ASw59+hRobP5oxL5m0jjVBxEXC1TgjK5kxUiKO02foInYoyFfrcDLIdwghhkMye0GP75mOyyaBnAh4PHFRuvpNdwkQJIbYL060CvA49gjwYJuYCWRdr2dxENHEc+qcxJ69dvv/OILY7vj7Vje3WCM5OHpf9JZuupY0yV2C9hfvDR/OfP/B4rGuC8KZW5kc3RyZWFtCmVuZG9iago3IDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLUJvbGQKL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcKL1N1YnR5cGUgL1R5cGUxCi9UeXBlIC9Gb250Cj4+CmVuZG9iago4IDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhCi9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nCi9TdWJ0eXBlIC9UeXBlMQovVHlwZSAvRm9udAo+PgplbmRvYmoKOSAwIG9iago8PAovRm9udCA8PC9GMSA3IDAgUgovRjIgOCAwIFI+PgovUHJvY1NldCBbL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSV0KPj4KZW5kb2JqCjEwIDAgb2JqCjw8Ci9Gb250IDw8L0YxIDcgMCBSCi9GMiA4IDAgUj4+Ci9Qcm9jU2V0IFsvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJXQo+PgplbmRvYmoKMTEgMCBvYmoKPDwKL0NyZWF0aW9uRGF0ZSAoRDoyMDI2MTEyNDExNDAzNlopCj4+CmVuZG9iagp4cmVmCjAgMTIKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDE1IDAwMDAwIG4gCjAwMDAwMDAxMDggMDAwMDAgbiAKMDAwMDAwMDIxMSAwMDAwMCBuIAowMDAwMDAwMjkxIDAwMDAwIG4gCjAwMDAwMDMwMDAgMDAwMDAgbiAKMDAwMDAwMzA4MSAwMDAwMCBuIAowMDAwMDA0ODE0IDAwMDAwIG4gCjAwMDAwMDQ5MTYgMDAwMDAgbiAKMDAwMDAwNTAxMyAwMDAwMCBuIAowMDAwMDA1MTEwIDAwMDAwIG4gCjAwMDAwMDUyMDggMDAwMDAgbiAKdHJhaWxlcgo8PAovU2l6ZSAxMgovUm9vdCAyIDAgUgovSW5mbyAxMSAwIFIKL0lEIFs8NjYwRjA0M0I1N0MxNDQxQTJENzRFRkU0MzY3RkQ1ODA+PDY2MEYwNDNCNTdDMTQ0MUEyRDc0RUZFNDM2N0ZENTgwPl0KPj4Kc3RhcnR4cmVmCjUyNjQKJSVFT0YK" download>Download the professional memo (PDF)</a> — updated 24 Nov 2026 to describe the Real Data section, its sources and its as-of date.
 </footer>
 
