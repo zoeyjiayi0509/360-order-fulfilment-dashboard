@@ -35,7 +35,7 @@ CALCULATE(SELECTEDVALUE(orders[ComponentA]), KEEPFILTERS(orders[ExampleID] = "O3
 Split component B =
 CALCULATE(SELECTEDVALUE(orders[ComponentB]), KEEPFILTERS(orders[ExampleID] = "O3"))
 
-// Zoey's stated estimate. Use the exact card title "Zoey's estimate (~80%)".
+// Zoey's stated estimate. Use the exact card title "Zoey's revised estimate (~60–70%)".
 Zoey estimate =
 SELECTEDVALUE(automation_parameters[EstimateFraction])
 
@@ -43,10 +43,10 @@ SELECTEDVALUE(automation_parameters[EstimateFraction])
 Scenario coverage =
 DIVIDE(SELECTEDVALUE(Coverage[Coverage], MAX(automation_parameters[CoverageDefaultPct])), 100)
 
-// What-if assumption: savings scale linearly with coverage. Anchor is Zoey's estimate (~80%).
+// What-if assumption: savings scale linearly with coverage. Anchor is the 65% midpoint of Zoey's revised estimate (~60–70%).
 Modelled time saved =
 [Scenario coverage] * [Zoey estimate]
 
-// What-if complement as a share of baseline time. Anchor is Zoey's estimate (~80%).
+// What-if complement as a share of baseline time. Anchor is the 65% midpoint of Zoey's revised estimate (~60–70%).
 Modelled time remaining =
 1 - [Modelled time saved]
