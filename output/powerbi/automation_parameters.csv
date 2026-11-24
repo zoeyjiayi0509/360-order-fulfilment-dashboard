@@ -1,2 +1,2 @@
 EstimateFraction,EstimateLabel,CoverageMinPct,CoverageMaxPct,CoverageStepPct,CoverageDefaultPct,Source
-0.8,Zoey's estimate (~80%),0,100,1,100,Zoey’s stated estimate in supplied brief; coverage controls are scenario assumptions.
+0.65,Zoey's revised estimate (~60–70%),0,100,1,100,Zoey’s stated estimate in supplied brief; coverage controls are scenario assumptions.
