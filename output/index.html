@@ -1,198 +1,902 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Order fulfilment analytics portfolio by Zoey Chao for 360 International Trading.">
-<title>Order Fulfilment Analytics · 360 International Trading</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Order Fulfilment Analytics — 360 International Trading</title>
 <style>
-:root{--paper:#f3f1eb;--ink:#172d2b;--muted:#506763;--green:#146b59;--mint:#c9e0d5;--line:#dedfd6;--cream:#f9f7f1;--gold:#c17a48}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 "Segoe UI",system-ui,sans-serif}button,select,input{font:inherit}button,select{cursor:pointer}button:focus-visible,select:focus-visible,input:focus-visible,[tabindex]:focus-visible,a:focus-visible{outline:3px solid #c17a48;outline-offset:3px}h1,h2,h3,p{margin:0}header{background:#152d2b;color:#f9f7f1;background-image:radial-gradient(ellipse at 92% 30%,#28524a,transparent 55%)}.wrap{width:min(1320px,calc(100% - 80px));margin:auto}.brand{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid #52716b;gap:16px}.brand-name{display:flex;align-items:center;gap:13px;font-weight:650}.mark{display:grid;place-items:center;width:46px;height:36px;border:1px solid #94b5aa;border-radius:7px;font:700 17px Georgia;letter-spacing:-.5px}.profile,.summary,.hero p{color:#d0e2db}.profile{text-align:right;font-size:13px}.hero{padding:35px 0 28px}.hero h1{font:normal clamp(36px,5vw,69px)/1.03 Georgia,serif;letter-spacing:-.045em;margin-bottom:12px}.hero p{font-size:14px}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav button{border:0;border-radius:9px 9px 0 0;padding:12px 17px;background:transparent;color:#cfe1db;text-align:left}.nav button[aria-current=page]{color:var(--ink);background:var(--paper);font-weight:700}.nav button:hover:not([aria-current]){background:#2c4d47}.heading{display:flex;gap:20px;justify-content:space-between;align-items:end;padding:28px 0 17px}.heading h2{font:normal clamp(28px,3vw,41px)/1.1 Georgia;letter-spacing:-.035em}.heading p{color:var(--muted);font-size:13px;margin-top:5px}.filters{display:flex;gap:10px;align-items:end;flex-wrap:wrap}.filter{display:grid;gap:4px;font-size:12px;font-weight:650;color:var(--muted)}select,.reset{border:1px solid #cbd1c7;border-radius:8px;background:#fff;color:var(--ink);padding:8px 11px;font-size:13px;min-height:38px}.reset{background:transparent}.reset:hover{background:#e4ebe2}.cards,.grid,.flow{display:grid;gap:14px;margin-bottom:14px}.cards{grid-template-columns:repeat(auto-fit,minmax(184px,1fr))}.grid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}.panel,.card{background:white;border:1px solid var(--line);border-radius:15px;box-shadow:0 4px 16px #18342e08;padding:20px 22px;min-width:0}.card{border-top:3px solid #9dbeb0}.card.accent{background:#e2eee7;border-top-color:var(--green)}.card-label{color:var(--muted);font-size:13px;font-weight:650}.value{font:normal clamp(28px,3vw,42px)/1.1 Georgia;letter-spacing:-.045em;margin:7px 0}.note,.card small,.empty{color:var(--muted);font-size:12px}.panel h3{font:normal 24px/1.15 Georgia;letter-spacing:-.025em;margin-bottom:7px}.panel-header{display:flex;justify-content:space-between;gap:12px;align-items:start;margin-bottom:12px}.flow{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:16px}.step{background:#edf3ee;padding:10px;border-radius:8px;line-height:1.3;font-size:12px;min-width:0}.step b{display:block;margin-bottom:3px}.entries{list-style:none;margin:8px 0 0;padding:0}.entries li,.coverage-row{border-top:1px solid #e8ebe5;padding:8px 0}.entries b,.coverage-row b{font-weight:650}.coverage-row{display:grid;grid-template-columns:minmax(105px,1fr) 2fr;gap:12px;font-size:13px}.coverage-row span{color:var(--muted)}.coverage-list{max-height:245px;overflow:auto;padding-right:9px}.evidence{border-left:3px solid var(--gold);padding:0 0 0 13px;margin-top:16px}.evidence p+p{margin-top:5px}.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}.chips span{background:#eef3ee;padding:5px 9px;border-radius:6px;font-size:12px}.chart{margin-top:17px;display:grid;gap:11px}.chart-row{display:grid;grid-template-columns:minmax(98px,124px) 1fr;align-items:center;gap:12px;font-size:13px}.chart-track{display:grid;grid-template-columns:1fr 70px;align-items:center;gap:10px}.chart svg{display:block;width:100%;height:24px;overflow:visible}.chart rect[data-tip]{cursor:help}.chart rect[data-tip]:hover,.chart rect[data-tip]:focus{filter:brightness(1.18);stroke:#172d2b;stroke-width:2;vector-effect:non-scaling-stroke}.chart-track strong{text-align:right;font-size:13px}.tooltip{position:fixed;z-index:5;border-radius:8px;background:#152d2b;color:white;padding:9px 12px;font-size:13px;pointer-events:none;max-width:min(300px,85vw);box-shadow:0 4px 20px #0003}.model{background:#e5efe8;border-color:#cbded2}.slider-label{display:flex;justify-content:space-between;gap:10px;font-weight:650;margin-top:16px}.model input{width:100%;margin:7px 0;accent-color:var(--green);cursor:pointer}.results{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:10px 0}.results div{border:1px solid #cadbd0;border-radius:9px;background:#f7faf6;padding:9px 12px;font-size:13px}.results strong{display:block;font:normal 29px Georgia}.handover{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:14px 0}.handover div{border-top:1px solid var(--line);padding-top:9px;font-size:13px}.handover b{display:block;margin-bottom:3px}footer{padding:18px 0 26px;border-top:1px solid #d4d9cf;color:var(--muted);font-size:12px;margin-top:22px}footer b{display:block;color:var(--ink);margin-bottom:4px}
-@media(max-width:850px){.wrap{width:calc(100% - 36px)}.heading{align-items:start;flex-direction:column}.grid{grid-template-columns:1fr}}
-@media(max-width:510px){.wrap{width:calc(100% - 24px)}.brand{align-items:start}.brand-name{font-size:12px}.profile{font-size:11px}.hero{padding:25px 0 18px}.nav{gap:2px}.nav button{flex:1;font-size:12px;padding:8px}.cards{grid-template-columns:1fr}.panel,.card{padding:15px 14px}.flow{grid-template-columns:1fr 1fr}.handover{grid-template-columns:1fr}.chart-row{grid-template-columns:79px 1fr;gap:6px}.chart-track{grid-template-columns:1fr 52px;gap:4px}.coverage-row{grid-template-columns:1fr 1.5fr}}
-.cin7-flow{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin-top:16px}.cin7-stage{background:#edf3ee;border:1px solid #dfe8e0;border-radius:10px;padding:12px;font-size:13px;line-height:1.45}.cin7-stage[open]{background:#e2eee7}.cin7-stage summary{cursor:pointer;list-style:none}.cin7-stage summary::-webkit-details-marker{display:none}.cin7-num{display:block;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}.cin7-stage summary b{display:block;font-size:14px;margin:3px 0}.cin7-hint{font-size:11px;color:var(--muted)}.cin7-stage ul{margin:10px 0 0;padding-left:18px}.cin7-stage li{margin:4px 0}.cin7-loop{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:14px}.cin7-loop span{background:#edf3ee;border:1px solid #dfe8e0;border-radius:8px;padding:8px 11px;font-weight:700}.cin7-loop i{color:var(--muted);font-style:normal}.cin7-demo{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}.cin7-demo li{border:1px solid var(--line);border-radius:10px;padding:11px 13px;background:#fff;font-size:13px}.cin7-demo li.active{border-color:var(--green);background:#eef6f0}.cin7-demo li.done{border-color:#9dbeb0}.cin7-status{display:block;color:var(--muted);font-size:12px;margin-top:3px}.cin7-demo li.done .cin7-status{color:var(--ink)}.cin7-controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.cin7-guard{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:14px}.cin7-guard div{border-top:3px solid var(--green);background:#edf3ee;border-radius:10px;padding:12px;font-size:13px}.cin7-guard b{display:block;margin-bottom:4px}.cin7-stop{margin-top:12px;border-left:3px solid var(--gold);background:#fdf6ee;padding:12px 14px;border-radius:0 10px 10px 0;font-size:13px}@media(max-width:850px){.cin7-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:510px){.cin7-flow{grid-template-columns:1fr}}</style>
+  :root{
+    --green:#146b59; --green-dark:#152d2b; --green-mid:#1d7d66;
+    --paper:#f3f1eb; --paper-2:#f9f7f1; --card:#fffdf8;
+    --ink:#22302c; --ink-soft:#4c5a55; --line:#ddd6c6;
+    --gold:#c17a48; --gold-soft:#e8cdb4;
+    --good:#146b59; --warn:#b07a2e; --bad:#a4443a;
+    --shadow:0 2px 10px rgba(21,45,43,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#101a17; --paper-2:#152019; --card:#1a2620;
+      --ink:#e9e4d6; --ink-soft:#b3bcb2; --line:#33443b;
+      --gold-soft:#5a4630; --shadow:0 2px 10px rgba(0,0,0,.4);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;font-size:16px}
+  h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif}
+  button,[role="button"],select,summary,input:not([type="checkbox"],[type="radio"]){min-height:2.25rem}
+  button{cursor:pointer;font:inherit}
+  a{color:var(--green)}
+  @media (prefers-color-scheme: dark){ a{color:#7fc9b4} }
+
+  /* ---------- Hero ---------- */
+  .hero{background:var(--green-dark);color:#f3f1eb;padding:2.2rem 1.25rem 1.8rem}
+  .hero-inner{max-width:1080px;margin:0 auto}
+  .hero .kicker{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 .5rem}
+  .hero h1{margin:0 0 .5rem;font-size:clamp(1.7rem,4.5vw,2.5rem);font-weight:600;line-height:1.15}
+  .hero p.lede{margin:0;max-width:46rem;color:#d8dcd2;font-size:1.02rem}
+  .hero .meta{margin-top:1rem;display:flex;flex-wrap:wrap;gap:.5rem}
+  .hero .meta span{border:1px solid rgba(243,241,235,.35);border-radius:999px;
+    padding:.25rem .75rem;font-size:.82rem;color:#e9e7dc}
+
+  main{max-width:1080px;margin:0 auto;padding:0 1.25rem 3rem}
+
+  /* ---------- Story guide ---------- */
+  .story{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:var(--shadow);padding:1.1rem 1.25rem;margin:-1.1rem 0 1.4rem;position:relative}
+  .story h2{margin:0 0 .7rem;font-size:1.05rem}
+  .story ol{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+  @media(min-width:760px){ .story ol{grid-template-columns:repeat(4,1fr);gap:.9rem} }
+  .story li{display:flex;gap:.6rem;align-items:flex-start}
+  .story .n{flex:0 0 auto;width:1.6rem;height:1.6rem;border-radius:50%;
+    background:var(--green);color:#fff;display:grid;place-items:center;
+    font-size:.85rem;font-weight:700;margin-top:.1rem}
+  .story b{display:block;font-size:.95rem}
+  .story p{margin:0;font-size:.86rem;color:var(--ink-soft)}
+
+  /* ---------- Filter bar ---------- */
+  .filterbar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin:0 0 1.1rem}
+  .filterbar label{font-size:.88rem;font-weight:600}
+  .filterbar select{padding:.35rem .6rem;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--ink);font:inherit;font-size:.92rem}
+  .filterbar .reset{border:1px solid var(--line);background:var(--card);color:var(--ink);
+    border-radius:8px;padding:.35rem .9rem;font-size:.9rem}
+  .filter-note{font-size:.85rem;color:var(--ink-soft);margin:0 0 1rem}
+
+  /* ---------- Tabs ---------- */
+  .tabs{display:flex;gap:.4rem;flex-wrap:wrap;border-bottom:2px solid var(--line);margin-bottom:1.4rem}
+  .tab{border:none;background:transparent;color:var(--ink-soft);padding:.6rem .95rem;
+    font-size:.95rem;font-weight:600;border-bottom:3px solid transparent;margin-bottom:-2px;border-radius:8px 8px 0 0}
+  .tab[aria-selected="true"]{color:var(--green-dark);border-bottom-color:var(--gold);
+    background:var(--paper-2)}
+  @media (prefers-color-scheme: dark){ .tab[aria-selected="true"]{color:var(--ink)} }
+  .tab:focus-visible,.reset:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  .panel{display:none}
+  .panel.active{display:block}
+  .panel > h2{font-size:1.45rem;margin:.2rem 0 .15rem}
+  .panel .sub{color:var(--ink-soft);margin:0 0 1rem;font-size:.98rem}
+  .takeaway{background:var(--paper-2);border:1px solid var(--gold-soft);border-left:5px solid var(--gold);
+    border-radius:10px;padding:.7rem 1rem;margin:0 0 1.3rem;font-size:.95rem}
+  .takeaway b{color:var(--gold)}
+
+  /* ---------- Cards & grids ---------- */
+  .cards{display:grid;gap:.9rem;margin-bottom:1.3rem}
+  @media(min-width:640px){ .cards{grid-template-columns:repeat(3,1fr)} }
+  @media(min-width:640px){ .cards.two{grid-template-columns:repeat(2,1fr)} }
+  @media(min-width:900px){ .cards.four{grid-template-columns:repeat(4,1fr)} }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:1rem 1.1rem;box-shadow:var(--shadow)}
+  .card .label{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 .3rem}
+  .card .value{font-family:Georgia,serif;font-size:1.9rem;line-height:1.1;margin:0}
+  .card .note{font-size:.86rem;color:var(--ink-soft);margin:.35rem 0 0}
+  .card .tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.05em;
+    border-radius:999px;padding:.12rem .55rem;margin-bottom:.45rem}
+  .tag.real{background:var(--green);color:#fff}
+  .tag.model{background:var(--gold);color:#fff}
+  .tag.sim{background:transparent;border:1.5px dashed var(--gold);color:var(--gold)}
+  .tag.verified{background:var(--green-dark);color:#f3f1eb}
+
+  .grid2{display:grid;gap:1rem;margin-bottom:1.3rem}
+  @media(min-width:820px){ .grid2{grid-template-columns:1fr 1fr} }
+  .box{background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:1.1rem 1.2rem;box-shadow:var(--shadow)}
+  .box h3{margin:0 0 .6rem;font-size:1.08rem}
+  .box p{margin:.4rem 0}
+  .box .why{font-size:.9rem;color:var(--ink-soft);border-top:1px solid var(--line);
+    padding-top:.55rem;margin-top:.7rem}
+  .box .why b{color:var(--gold)}
+  ul.tight{margin:.3rem 0 .3rem 1.1rem;padding:0}
+  ul.tight li{margin:.25rem 0}
+  .chips{display:flex;flex-wrap:wrap;gap:.45rem;margin:.4rem 0}
+  .chip{border:1px solid var(--line);background:var(--paper-2);border-radius:999px;
+    padding:.28rem .75rem;font-size:.85rem}
+
+  /* ---------- Charts ---------- */
+  .chart{width:100%;height:auto;display:block}
+  .chart .bar{fill:var(--green)}
+  .chart .bar.gold{fill:var(--gold)}
+  .chart .bar.soft{fill:var(--green-mid);opacity:.55}
+  .chart text{fill:var(--ink);font-family:"Segoe UI",system-ui,sans-serif}
+  .chart .axis{stroke:var(--line)}
+  .legend{display:flex;flex-wrap:wrap;gap:1rem;font-size:.85rem;color:var(--ink-soft);margin-top:.4rem}
+  .legend i{display:inline-block;width:.8rem;height:.8rem;border-radius:3px;margin-right:.35rem;vertical-align:-1px}
+
+  /* ---------- Tables ---------- */
+  table{border-collapse:collapse;width:100%;font-size:.93rem}
+  th,td{padding:.5rem .6rem;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft)}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .tblwrap{overflow-x:auto}
+  @media(max-width:560px){
+    .stack-table thead{display:none}
+    .stack-table tr{display:block;border:1px solid var(--line);border-radius:10px;
+      margin-bottom:.7rem;padding:.4rem .2rem;background:var(--card)}
+    .stack-table td{display:flex;justify-content:space-between;gap:1rem;border-bottom:none;padding:.35rem .6rem}
+    .stack-table td::before{content:attr(data-h);font-weight:600;color:var(--ink-soft);font-size:.82rem}
+    .stack-table td.num{text-align:right}
+  }
+
+  /* ---------- Workflow steps ---------- */
+  .steps{display:grid;gap:.8rem}
+  @media(min-width:820px){ .steps{grid-template-columns:repeat(4,1fr)} }
+  .step{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--green);
+    border-radius:10px;padding:.9rem 1rem}
+  .step h4{margin:0 0 .35rem;font-size:.98rem}
+  .step p{margin:0;font-size:.88rem;color:var(--ink-soft)}
+
+  /* ---------- What-if ---------- */
+  .slider-row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin:.8rem 0}
+  input[type="range"]{flex:1 1 220px;accent-color:var(--green);min-height:2.25rem}
+  .big-nums{display:flex;gap:2rem;flex-wrap:wrap;margin:.6rem 0}
+  .big-nums .v{font-family:Georgia,serif;font-size:2rem}
+  .big-nums .l{font-size:.82rem;color:var(--ink-soft)}
+
+  /* ---------- Cin7 stages ---------- */
+  details.stage{background:var(--card);border:1px solid var(--line);border-radius:10px;
+    margin-bottom:.6rem;padding:.2rem 1rem}
+  details.stage summary{font-weight:600;padding:.55rem 0;cursor:pointer}
+  details.stage p,details.stage li{font-size:.93rem}
+  .loop{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin:.6rem 0}
+  .loop span{background:var(--green-dark);color:#f3f1eb;border-radius:8px;
+    padding:.3rem .6rem;font-weight:700;font-size:.85rem}
+  .loop em{font-style:normal;color:var(--ink-soft)}
+  .demo-btns{display:flex;gap:.6rem;flex-wrap:wrap;margin:.7rem 0}
+  .btn{background:var(--green);color:#fff;border:none;border-radius:9px;padding:.5rem 1.1rem;font-weight:600}
+  .btn.secondary{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+  .demo-status{background:var(--paper-2);border:1px dashed var(--gold);border-radius:10px;
+    padding:.8rem 1rem;font-size:.93rem;min-height:3.2rem}
+
+  .src{font-size:.85rem;color:var(--ink-soft);border-top:1px solid var(--line);
+    margin-top:1.6rem;padding-top:.8rem}
+  .src b{color:var(--ink)}
+  footer{max-width:1080px;margin:0 auto;padding:0 1.25rem 2.5rem;color:var(--ink-soft);font-size:.85rem}
+  .hidden-by-filter{display:none !important}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+</style>
 </head>
 <body>
-<header>
-<div class="wrap">
-<div class="brand"><div class="brand-name"><span class="mark" aria-hidden="true">360</span>360 International Trading</div><div class="profile">Zoey Chao · Logistics Officer<br>May–Nov 2026</div></div>
-<div class="hero"><h1>Order Fulfilment Analytics</h1><p>Operations evidence, logistics coverage and automation impact</p></div>
-<nav class="nav" aria-label="Dashboard pages">
-<button data-page="operations">Operations Overview</button>
-<button data-page="logistics">Logistics Deep Dive</button>
-<button data-page="business">Business Analysis</button><button data-page="cin7">Cin7 Order Push</button>
-</nav>
-</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">360 International Trading · Logistics Officer, May – Nov 2026</p>
+    <h1>Order Fulfilment Analytics</h1>
+    <p class="lede">How several thousand B2B and B2C orders a month moved from intake to delivery — what was automated, what it saved, and what the real working spreadsheets show. Read it top to bottom: it is one story in four steps, across five tabs.</p>
+    <div class="meta">
+      <span>Channels: Costco portal · Shopify · Amazon</span>
+      <span>Systems: Cin7 · CartonCloud · EWE · AusPost · DHL</span>
+      <span>Real data as of 24 Nov 2026</span>
+    </div>
+  </div>
 </header>
-<main class="wrap">
-<section class="heading" aria-labelledby="page-title">
-<div><h2 id="page-title"></h2><p id="page-summary"></p></div>
-<div class="filters">
-<label class="filter">Example channel<select id="channel"><option value="">All channels</option></select></label>
-<button class="reset" id="reset">Reset filters</button>
-</div>
-</section>
-<div id="content"></div>
-<footer id="sources"></footer>
+
+<main>
+  <section class="story" aria-label="How to read this dashboard">
+    <h2>How to read this page — the story in four steps</h2>
+    <ol>
+      <li><span class="n">1</span><div><b>The operation</b><p>Orders arrived from Costco, Shopify and Amazon and were pushed by hand through Cin7 to the warehouse.</p></div></li>
+      <li><span class="n">2</span><div><b>The automation</b><p>A local Python program took over the repetitive order-pushing step in Cin7, with checks before anything was released.</p></div></li>
+      <li><span class="n">3</span><div><b>The results</b><p>Processing time fell by an estimated 60–70%. The What-if model shows what that means at different levels of coverage.</p></div></li>
+      <li><span class="n">4</span><div><b>The real data</b><p>The last tab shows aggregated counts from the actual working spreadsheets — inquiries, deliveries, returns and Amazon orders.</p></div></li>
+    </ol>
+  </section>
+
+  <div class="filterbar">
+    <label for="channelFilter">Example channel</label>
+    <select id="channelFilter">
+      <option value="all">All channels</option>
+      <option value="costco">Costco portal</option>
+      <option value="shopify">Shopify</option>
+      <option value="amazon">Amazon</option>
+      <option value="unspecified">Unspecified</option>
+    </select>
+    <button class="reset" id="resetFilters" type="button">Reset filters</button>
+  </div>
+  <p class="filter-note" id="filterNote">Showing examples from all channels. The filter only affects the worked examples on the first four tabs — the Real Data tab always shows the full aggregated picture.</p>
+
+  <nav class="tabs" role="tablist" aria-label="Dashboard sections">
+    <button class="tab" role="tab" id="tab-ops" aria-controls="panel-ops" aria-selected="true" data-tab="ops">1 · Operations Overview</button>
+    <button class="tab" role="tab" id="tab-log" aria-controls="panel-log" aria-selected="false" data-tab="log">2 · Logistics Deep Dive</button>
+    <button class="tab" role="tab" id="tab-biz" aria-controls="panel-biz" aria-selected="false" data-tab="biz">3 · Business Analysis</button>
+    <button class="tab" role="tab" id="tab-cin7" aria-controls="panel-cin7" aria-selected="false" data-tab="cin7">4 · Cin7 Order Push</button>
+    <button class="tab" role="tab" id="tab-real" aria-controls="panel-real" aria-selected="false" data-tab="real">5 · Real Data</button>
+  </nav>
+
+  <!-- ============ PANEL 1: OPERATIONS ============ -->
+  <section class="panel active" id="panel-ops" role="tabpanel" aria-labelledby="tab-ops">
+    <h2>Operations Overview</h2>
+    <p class="sub">Order intake, release and exception handling — the day-to-day operation the automation was built for.</p>
+    <p class="takeaway"><b>Takeaway:</b> One corrected Costco order shows the whole job in miniature — check the order, fix the quantity, release the stock, keep the delivery moving.</p>
+
+    <div class="cards" data-channel="costco">
+      <div class="card">
+        <span class="tag verified">Verified example</span>
+        <p class="label">Costco PO units</p>
+        <p class="value">10</p>
+        <p class="note">A Costco purchase order — 10 units of the H60, ordered through the Costco portal (Colladium).</p>
+      </div>
+      <div class="card">
+        <span class="tag verified">Verified example</span>
+        <p class="label">Original quantity</p>
+        <p class="value">10</p>
+        <p class="note">The quantity as it first appeared on the purchase order.</p>
+      </div>
+      <div class="card">
+        <span class="tag verified">Verified example</span>
+        <p class="label">Corrected quantity</p>
+        <p class="value">6</p>
+        <p class="note">After checking, the quantity was corrected from 10 down to 6 before the order was released.</p>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="box" data-channel="costco">
+        <h3>Why the correction mattered</h3>
+        <div id="chart-qty"></div>
+        <p class="why"><b>Takeaway:</b> Catching a 4-unit overstatement before release stops the warehouse picking stock that was never really ordered.</p>
+      </div>
+      <div class="box" data-channel="costco">
+        <h3>Costco order handling — what actually happened</h3>
+        <ul class="tight">
+          <li>The purchase order arrived for 10 units of the H60 via the Costco portal.</li>
+          <li>The quantity was checked and corrected: <b>10 → 6 units</b>.</li>
+          <li>A separate cancelled Costco order was voided in Cin7, which released its stock back for the H60.</li>
+          <li>The correction and the cancellation are two separate events — there is no verified link between them and this purchase order.</li>
+        </ul>
+        <p class="why"><b>Takeaway:</b> Exception handling — corrections, cancellations, stock release — is the manual work that sits around every automated step.</p>
+      </div>
+    </div>
+
+    <h3 class="serif">Order to delivery, in four steps</h3>
+    <div class="steps">
+      <div class="step"><h4>1 · Order intake</h4><p>Orders land from the Costco portal (Colladium), Shopify stores and Amazon, and are checked for quantity, stock and address problems.</p></div>
+      <div class="step"><h4>2 · Processing</h4><p>Orders are registered and pushed in Cin7. This repetitive push step is the one the Python automation took over (see tab 4).</p></div>
+      <div class="step"><h4>3 · Warehouse &amp; 3PL</h4><p>Released orders flow to CartonCloud for picking and dispatch from the Sydney, Melbourne or Brisbane warehouse.</p></div>
+      <div class="step"><h4>4 · Tracking &amp; delivery</h4><p>Consignments are tracked through EWE, AusPost and DHL until delivery; exceptions come back as inquiries (see tab 5).</p></div>
+    </div>
+
+    <div class="box" style="margin-top:1rem">
+      <h3>Systems used across the flow</h3>
+      <div class="chips">
+        <span class="chip">Colladium — Costco B2B portal</span>
+        <span class="chip">Shopify — Segway AU &amp; Roborock stores</span>
+        <span class="chip">Amazon — Hohem &amp; 360 orders</span>
+        <span class="chip">Cin7 — order management</span>
+        <span class="chip">CartonCloud — warehouse / WMS</span>
+        <span class="chip">EWE — freight tracking</span>
+        <span class="chip">AusPost Merchant Portal</span>
+        <span class="chip">DHL</span>
+        <span class="chip">Google Sheets — inquiries, returns, freight trackers</span>
+        <span class="chip">SharePoint / OneDrive — stock on hand &amp; incoming stock</span>
+      </div>
+      <p class="why"><b>Takeaway:</b> No single system runs this operation — the skill is keeping ten of them in agreement on every order.</p>
+    </div>
+
+    <p class="src"><b>Sources &amp; notes:</b> Figures on this page are verified worked examples from the role (a Costco purchase order; quantity correction 10 → 6). Order volume of several thousand orders per month is as stated for the role. No customer details are shown anywhere on this page.</p>
+  </section>
+
+  <!-- ============ PANEL 2: LOGISTICS ============ -->
+  <section class="panel" id="panel-log" role="tabpanel" aria-labelledby="tab-log">
+    <h2>Logistics Deep Dive</h2>
+    <p class="sub">Freight scope, tracking coverage and warehouse coordination — what happened after an order left the building.</p>
+    <p class="takeaway"><b>Takeaway:</b> Freight is where small errors get expensive: one damaged carton, one wrong warehouse, one short delivery — each one becomes a claim, a return or a re-dispatch.</p>
+
+    <div class="cards two">
+      <div class="card">
+        <span class="tag verified">Verified example</span>
+        <p class="label">Returned cartons (damaged goods)</p>
+        <p class="value">1</p>
+        <p class="note">One carton of damaged goods was returned.</p>
+      </div>
+      <div class="card">
+        <span class="tag verified">Verified example</span>
+        <p class="label">Return cost</p>
+        <p class="value">$8.60</p>
+        <p class="note">Freight for that return, paid by 360.</p>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="box">
+        <h3>The damaged-goods return</h3>
+        <div id="chart-return"></div>
+        <p>Carton sizes handled in this work included <b>100 × 150 × 170</b> and <b>30 × 40 × 20</b> (units as recorded in the source notes).</p>
+        <p class="why"><b>Takeaway:</b> Even a single-carton return carries a real freight cost — $8.60 — which is why damage and short-supply claims are logged, not shrugged off.</p>
+      </div>
+      <div class="box">
+        <h3>Freight coverage: air, sea and road</h3>
+        <ul class="tight">
+          <li><b>Air &amp; sea freight</b> — tracked in a dedicated Air Sea Freight Tracking workbook (see the Real Data tab for why its figures are not charted here).</li>
+          <li><b>Road freight</b> — cross-state freight to WA / Perth. Road note from the work: dispatching from <b>Melbourne was faster and cheaper than from Brisbane</b> for that lane.</li>
+          <li>Warehouse choice is a freight decision: the Cin7 push flow picks the warehouse by state and bin stock before anything is released (tab 4).</li>
+        </ul>
+        <p class="why"><b>Takeaway:</b> Picking the right dispatch warehouse is the cheapest freight saving there is — it costs nothing and shortens the longest lane.</p>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="box">
+        <h3>Tracking &amp; delivery systems</h3>
+        <div class="chips">
+          <span class="chip">EWE</span><span class="chip">AusPost</span><span class="chip">DHL</span>
+          <span class="chip">Allied Express Track &amp; Trace</span><span class="chip">MyTeamGE (Team Global Express)</span>
+          <span class="chip">Costco Traffic prepaid</span>
+        </div>
+        <p class="why"><b>Takeaway:</b> Every carrier has its own portal, so tracking coverage means knowing which portal holds the answer for each order.</p>
+      </div>
+      <div class="box">
+        <h3>Exception support — the work between the systems</h3>
+        <div class="chips">
+          <span class="chip">Costco RA</span><span class="chip">Shortages</span><span class="chip">PO errors</span>
+          <span class="chip">Cross-state transfers</span><span class="chip">Invoice reissue</span><span class="chip">Returns</span>
+          <span class="chip">LIT (lost in transit)</span><span class="chip">Warehouse inventory allocation</span>
+          <span class="chip">Order follow-up</span>
+        </div>
+        <p class="why"><b>Takeaway:</b> Automation handles the standard orders; this list is the judgement work that remains — and it is most of the job.</p>
+      </div>
+    </div>
+
+    <p class="src"><b>Sources &amp; notes:</b> Damaged return (1 carton, $8.60, freight paid by 360) and carton sizes are verified examples from the role. The Melbourne-vs-Brisbane road freight note is as stated in the work records; no freight rates are shown because none were verified.</p>
+  </section>
+
+  <!-- ============ PANEL 3: BUSINESS ANALYSIS ============ -->
+  <section class="panel" id="panel-biz" role="tabpanel" aria-labelledby="tab-biz">
+    <h2>Business Analysis</h2>
+    <p class="sub">Order value examples and a processing-time scenario — what the automation was worth, stated carefully: estimates are labelled estimates, and the model is labelled a model.</p>
+    <p class="takeaway"><b>Takeaway:</b> The honest headline is a range, not a single number: processing time fell by an estimated 60–70%, and the model below uses the 65% midpoint.</p>
+
+    <div class="cards">
+      <div class="card" data-channel="unspecified">
+        <span class="tag verified">Verified example</span>
+        <p class="label">Order value example</p>
+        <p class="value">$20,000</p>
+        <p class="note">A single standalone order handled in this operation.</p>
+      </div>
+      <div class="card" data-channel="unspecified">
+        <span class="tag verified">Verified example</span>
+        <p class="label">Split order value</p>
+        <p class="value">$8,600</p>
+        <p class="note">One order split into two parts: $4,200 + $4,400.</p>
+      </div>
+      <div class="card">
+        <span class="tag model">Estimate</span>
+        <p class="label">Processing-time reduction</p>
+        <p class="value">~60–70%</p>
+        <p class="note">Zoey's revised estimate for the automated order-pushing step. An estimate, not a measured figure.</p>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="box" data-channel="unspecified">
+        <h3>Order values, side by side</h3>
+        <div id="chart-values"></div>
+        <p class="why"><b>Takeaway:</b> Individual orders in this operation run into five figures — a quantity or address error on one order is a four-figure problem.</p>
+      </div>
+      <div class="box">
+        <h3>What-if model: automation coverage vs time saved</h3>
+        <p>Drag the slider. The model assumes the automated step saves 65% of its processing time (the midpoint of the 60–70% estimate), scaled by how many orders the automation covers.</p>
+        <div class="slider-row">
+          <label for="coverage"><b>Automation coverage</b></label>
+          <input type="range" id="coverage" min="0" max="100" step="5" value="100" aria-describedby="whatif-out" />
+          <b id="coverageVal">100%</b>
+        </div>
+        <div class="big-nums" id="whatif-out">
+          <div><div class="v" id="savedVal">65%</div><div class="l">Modelled time saved</div></div>
+          <div><div class="v" id="remainVal">35%</div><div class="l">Processing time remaining</div></div>
+        </div>
+        <div id="chart-whatif"></div>
+        <p class="why"><b>Takeaway:</b> At full coverage the model gives 65% time saved — a <b>modelled</b> figure built from the estimate above, not a measured result.</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <span class="tag sim">Simulated data</span>
+      <h3>Simulated portfolio model (V1) — clearly labelled</h3>
+      <p>An earlier portfolio version of this dashboard was built on a <b>simulated</b> dataset of 20,300 generated orders (May – Oct 2026). Its figures describe the simulation only — they are not 360's real results, and they are kept here, labelled, so nothing is quietly swapped:</p>
+      <div class="tblwrap"><table class="stack-table">
+        <thead><tr><th>Simulated metric</th><th class="num">Simulated value</th><th>What it describes</th></tr></thead>
+        <tbody>
+          <tr><td data-h="Metric">Processing time per order</td><td class="num" data-h="Value">24.9 → 8.7 min</td><td data-h="Meaning">Before vs after automation, inside the simulation</td></tr>
+          <tr><td data-h="Metric">Time saved</td><td class="num" data-h="Value">3,162 hours</td><td data-h="Meaning">Total across the simulated order set</td></tr>
+          <tr><td data-h="Metric">Error rate</td><td class="num" data-h="Value">4.16% → 0.83%</td><td data-h="Meaning">Simulated error rate before vs after</td></tr>
+          <tr><td data-h="Metric">On-time delivery</td><td class="num" data-h="Value">94.9%</td><td data-h="Meaning">Simulated orders delivered on time</td></tr>
+          <tr><td data-h="Metric">Return rate</td><td class="num" data-h="Value">3.83%</td><td data-h="Meaning">Simulated returns (Apparel highest at 7.7%)</td></tr>
+        </tbody>
+      </table></div>
+      <p class="why"><b>Takeaway:</b> For real operating figures, use tab 5 — everything there is aggregated from the actual working spreadsheets.</p>
+    </div>
+
+    <div class="box" style="margin-top:1rem">
+      <h3>Automation &amp; handover</h3>
+      <p>The order-pushing automation is a <b>Codex Python program</b> that runs as a local Codex desktop skill on Zoey's Mac (Zoey pays for her Codex membership personally). When she left, the project was handed over in three steps:</p>
+      <div class="steps" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+        <div class="step"><h4>1 · Transfer the project</h4><p>The program and its project files were passed to the team taking over the work.</p></div>
+        <div class="step"><h4>2 · Restore and verify</h4><p>The setup was restored on the other side and checked against a live round before sign-off.</p></div>
+        <div class="step"><h4>3 · Account and tool portability</h4><p>Notes covered what depends on accounts or tools, so the workflow does not silently depend on one person's login.</p></div>
+      </div>
+      <p class="why"><b>Takeaway:</b> Automation only counts as finished when someone else can run it — the handover is part of the result.</p>
+    </div>
+
+    <p class="src"><b>Sources &amp; notes:</b> Order values ($20,000; $8,600 = $4,200 + $4,400) are verified examples. The 60–70% processing-time reduction is Zoey's revised estimate; the What-if 65% is modelled from it and is not measured. Simulated V1 figures are labelled simulated and come from the earlier portfolio project, not from 360 records.</p>
+  </section>
+
+  <!-- ============ PANEL 4: CIN7 ORDER PUSH ============ -->
+  <section class="panel" id="panel-cin7" role="tabpanel" aria-labelledby="tab-cin7">
+    <h2>Cin7 Order Push</h2>
+    <p class="sub">The Cin7 order-push flow for the Shopify Roborock-Store channel — the automation from tab 3, shown step by step.</p>
+    <p class="takeaway"><b>Takeaway:</b> The automation is conservative by design: it cleans, filters and checks first, pushes second, and stops the whole round if any stage fails.</p>
+
+    <div class="cards" data-channel="shopify">
+      <div class="card"><p class="label">Channel</p><p class="value" style="font-size:1.35rem">Shopify</p><p class="note">Roborock-Store channel.</p></div>
+      <div class="card"><p class="label">Trigger</p><p class="value" style="font-size:1.35rem">Cin7 login</p><p class="note">A round starts from a signed-in Cin7 session.</p></div>
+      <div class="card"><p class="label">Rounds</p><p class="value" style="font-size:1.35rem">~2 per day</p><p class="note">Order-push rounds run about twice a day.</p></div>
+    </div>
+
+    <h3 class="serif">The seven stages</h3>
+    <details class="stage" open><summary>Stage 1 — Cleanse</summary>
+      <p>Incoming orders are cleaned first: duplicates, malformed lines and obvious errors are removed before anything else happens, so later stages only ever see valid orders.</p></details>
+    <details class="stage"><summary>Stage 2 — Filter, branch to Head Office</summary>
+      <p>Orders are filtered to the Roborock-Store channel and branched to Head Office, so store and head-office orders never mix in one push.</p></details>
+    <details class="stage"><summary>Stage 2 (warehouse) — Warehouse selection</summary>
+      <ul class="tight">
+        <li>Only bins with stock on hand <b>greater than 2</b> are eligible.</li>
+        <li>State priority: NSW / ACT → Sydney first; VIC / TAS / SA / NT → Melbourne first; QLD → Brisbane first.</li>
+        <li>The WA warehouse is <b>not</b> in the automatic rotation.</li>
+      </ul></details>
+    <details class="stage"><summary>Stage 3 — Push</summary>
+      <ul class="tight">
+        <li>Stage set to <b>Release To Pick – WMS</b>; invoice date set to today.</li>
+        <li>Saved to Admin, then <b>read back</b> to verify the push actually landed as intended.</li>
+      </ul></details>
+    <details class="stage"><summary>Stage 4.5 — Restock sweep</summary>
+      <p>After the main push, a sweep re-checks waiting orders in FIFO order. Only <b>single-item orders</b> are eligible for the sweep, so a restock never half-fills a multi-item order.</p></details>
+    <details class="stage"><summary>Stage 5 — Report</summary>
+      <p>Each round produces a PDF report and an index, and sends a notification — the audit trail for what was pushed, where, and when.</p></details>
+    <details class="stage"><summary>Guardrails — what the automation will never do</summary>
+      <ul class="tight">
+        <li>Runs in <b>DRY-RUN</b> mode for checks before a live push.</li>
+        <li>3PL setting stays <b>Do Not Transfer to 3PL</b>.</li>
+        <li>Bin stock rule: SOH must be <b>&gt; 2</b>.</li>
+        <li>Passwords are never read or typed by the program; there is no Cin7 API key.</li>
+        <li>If any stage fails, the round <b>stops</b> — it does not skip ahead.</li>
+      </ul></details>
+
+    <h3 class="serif">Execution loop</h3>
+    <div class="loop" aria-label="Execution loop steps">
+      <span>R</span><em>→</em><span>E</span><em>→</em><span>B</span><em>→</em><span>L</span><em>→</em><span>Q</span><em>→</em><span>S</span><em>→</em><span>P</span><em>→</em><span>V</span><em>→</em><span>U</span><em>→</em><span>T</span><em>→</em><span>Z</span>
+    </div>
+    <p style="font-size:.92rem;color:var(--ink-soft)">Each round runs the same fixed loop from start (R) to finish (Z), so every round is checked the same way and any failure is easy to locate.</p>
+
+    <div class="box" data-channel="shopify">
+      <h3>Try it: walk an example order through the flow</h3>
+      <p>Example order <b>#RoboStore44551</b> is <b>illustrative only — not a real order</b>. Press Play and watch it move through all seven stages.</p>
+      <div class="demo-btns">
+        <button class="btn" id="demoPlay" type="button">Play demo</button>
+        <button class="btn secondary" id="demoReset" type="button">Reset demo</button>
+      </div>
+      <div class="demo-status" id="demoStatus" role="status">Ready. The example order is waiting at Stage 1 — Cleanse.</div>
+      <p class="why"><b>Takeaway:</b> The demo is the flow in miniature: cleanse, filter, choose a warehouse, push, verify, sweep, report.</p>
+    </div>
+
+    <p class="src"><b>Sources &amp; notes:</b> Flow, guardrails and cadence are as built for the role. The demo order is illustrative and does not correspond to any real customer order.</p>
+  </section>
+
+  <!-- ============ PANEL 5: REAL DATA ============ -->
+  <section class="panel" id="panel-real" role="tabpanel" aria-labelledby="tab-real">
+    <h2>Real Data — from the working spreadsheets</h2>
+    <p class="sub">Aggregated counts read from Zoey's actual 360 working Google Sheets on <b>24 Nov 2026</b>. Aggregates only: no customer names, addresses, contact details or individual order numbers appear anywhere in this section.</p>
+    <p class="takeaway"><b>Takeaway:</b> The real sheets tell the same story as the first four tabs — a high-volume operation where address changes, deliveries in flight and returns are the daily workload, and most of it closes out.</p>
+
+    <!-- A. Inquiries -->
+    <div class="box">
+      <span class="tag real">Real data</span>
+      <h3>A · Online Order Inquiries — the follow-up workload (Nov 2026)</h3>
+      <p>Source: <b>Online Order Inquiries</b> sheet, “total sheet” consolidated tracker · As of 24 Nov 2026.</p>
+      <div class="cards">
+        <div class="card"><p class="label">Follow-up items tracked</p><p class="value">254</p><p class="note">Every customer follow-up logged in the consolidated tracker for Nov 2026.</p></div>
+        <div class="card"><p class="label">Completed</p><p class="value">153 · 60%</p><p class="note">Closed out by the time the sheet was read.</p></div>
+        <div class="card"><p class="label">Still moving</p><p class="value">101</p><p class="note">70 in progress (28%) and 31 pending (12%).</p></div>
+      </div>
+      <div class="grid2" style="margin-bottom:0">
+        <div>
+          <div id="chart-inq-status"></div>
+          <p class="why"><b>Takeaway:</b> Three in five inquiries were already completed — the tracker is a closing-down list, not a growing backlog.</p>
+        </div>
+        <div>
+          <div id="chart-inq-topics"></div>
+          <p class="why"><b>Takeaway:</b> Address changes (84 mentions) dwarf every other topic — fixing an address before dispatch is the single biggest follow-up task. One item can match more than one topic, and 112 items matched none of the listed keywords.</p>
+        </div>
+      </div>
+      <div class="tblwrap"><table class="stack-table">
+        <thead><tr><th>Live list</th><th class="num">Items</th><th>What it shows</th></tr></thead>
+        <tbody>
+          <tr><td data-h="List">Open list</td><td class="num" data-h="Items">53</td><td data-h="Shows">On Hold 16 · Wait for response 14 · Urgent 13 · Pending 4 · Kitty to follow 3 · Closed 2 · 1 unlabelled</td></tr>
+          <tr><td data-h="List">Closed list</td><td class="num" data-h="Items">103</td><td data-h="Shows">All 103 marked Closed</td></tr>
+          <tr><td data-h="List">Where tracker items came from</td><td class="num" data-h="Items">254</td><td data-h="Shows">Inquiries 127 · completed list 37 · Cin7 new registrations 28 · merged multi-source 12 · 50 with no source label</td></tr>
+        </tbody>
+      </table></div>
+      <p class="why"><b>Takeaway:</b> Of the 53 open items, 13 are flagged Urgent — that is the list that gets worked first each day.</p>
+    </div>
+
+    <!-- B. Deliveries -->
+    <div class="box" style="margin-top:1rem">
+      <span class="tag real">Real data</span>
+      <h3>B · Costco &amp; Amazon deliveries, 2026</h3>
+      <p>Source: <b>Costco Amazon x 360 delivery 2026</b> sheet · As of 24 Nov 2026.</p>
+      <div class="cards four">
+        <div class="card"><p class="label">Orders in transit</p><p class="value">135</p><p class="note">In the “Delivering” tab — 23,461 units in total (unit count from the quantity column, not a sales figure).</p></div>
+        <div class="card"><p class="label">Delivered</p><p class="value">194 of 246</p><p class="note">79% of listed orders in the “Delivered” tab are marked Delivered = Y.</p></div>
+        <div class="card"><p class="label">Cancelled</p><p class="value">9</p><p class="note">Costco AU 6 · Costco NZ 3.</p></div>
+        <div class="card"><p class="label">RA collections</p><p class="value">8</p><p class="note">122 approved units across 7 Costco stores; bookings Confirmed 6 / Pending 2; 5 collected.</p></div>
+      </div>
+      <div class="grid2" style="margin-bottom:0">
+        <div>
+          <div id="chart-deliv-channel"></div>
+          <p class="why"><b>Takeaway:</b> Amazon is the largest single channel in transit (69 of 135 orders), ahead of Costco AU (44) — plus 15 rows with no channel label.</p>
+        </div>
+        <div>
+          <div id="chart-deliv-month"></div>
+          <p class="why"><b>Takeaway:</b> In-transit bookings peak in Nov 2026 (28) and Sep 2026 (26) — the pre-Christmas ramp is visible in the freight book. 54 orders carry no booking date.</p>
+        </div>
+      </div>
+      <div class="tblwrap"><table class="stack-table">
+        <thead><tr><th>Delivered tab, by company</th><th class="num">Orders listed</th></tr></thead>
+        <tbody>
+          <tr><td data-h="Company">Costco AU</td><td class="num" data-h="Orders">153</td></tr>
+          <tr><td data-h="Company">Costco (other)</td><td class="num" data-h="Orders">43</td></tr>
+          <tr><td data-h="Company">Amazon</td><td class="num" data-h="Orders">24</td></tr>
+          <tr><td data-h="Company">Costco NZ</td><td class="num" data-h="Orders">24</td></tr>
+          <tr><td data-h="Company">No company label</td><td class="num" data-h="Orders">2</td></tr>
+        </tbody>
+      </table></div>
+      <p class="why"><b>Takeaway:</b> Costco AU dominates completed deliveries (153 of 246). Top products in transit by order count: Qrevo L Pro 25, Qrevo L 18, Qrevo Curv 2 Flow 13, E2 PRO 11, Potensic Atom 2 Drone 11. Product split for the Delivered tab is not shown — its columns shift between rows, so that column is unreliable.</p>
+    </div>
+
+    <!-- C. Returns -->
+    <div class="box" style="margin-top:1rem">
+      <span class="tag real">Real data</span>
+      <h3>C · Returns — 360 ILS RETURN LIST (Dec 2025 – Nov 2026)</h3>
+      <p>Source: <b>360 ILS RETURN LIST</b> sheet, all four tabs · As of 24 Nov 2026.</p>
+      <div class="cards">
+        <div class="card"><p class="label">Return records</p><p class="value">681</p><p class="note">Melbourne 501 · Sydney 177 · WA 3.</p></div>
+        <div class="card"><p class="label">Units returned</p><p class="value">1,284</p><p class="note">Melbourne 874 · Sydney 399 · WA 11.</p></div>
+        <div class="card"><p class="label">Back into stock</p><p class="value">186</p><p class="note">Returns that went straight back on the shelf — the best outcome a return can have.</p></div>
+      </div>
+      <div class="grid2" style="margin-bottom:0">
+        <div>
+          <div id="chart-ret-month"></div>
+          <p class="why"><b>Takeaway:</b> Melbourne returns peaked in Jan 2026 (105) — the post-Christmas wave — and eased through the year. Sydney runs the opposite pattern, peaking in Nov 2026 (53).</p>
+        </div>
+        <div>
+          <div id="chart-ret-outcome"></div>
+          <p class="why"><b>Takeaway:</b> Most returns end in a system, not a bin: 277 were received into CartonCloud at Melbourne and 186 went back into stock, against only 9 disposed. 165 records carry another or no recorded outcome.</p>
+        </div>
+      </div>
+      <div class="tblwrap"><table class="stack-table">
+        <thead><tr><th>Returns detail</th><th class="num">Count</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td data-h="Detail">By product family</td><td class="num" data-h="Count">681</td><td data-h="Note">Roborock 442 · Segway 73 · other / accessory 166</td></tr>
+          <tr><td data-h="Detail">Sent to Technocity service centre</td><td class="num" data-h="Count">31</td><td data-h="Note">Melbourne 11 · Sydney 20</td></tr>
+          <tr><td data-h="Detail">Resent to customer</td><td class="num" data-h="Count">13</td><td data-h="Note">Melbourne only</td></tr>
+          <tr><td data-h="Detail">Short-supply / credit claims (LIT list)</td><td class="num" data-h="Count">13 records · 14 units</td><td data-h="Note">All via TollIPEC, Dec 2025 – Feb 2026</td></tr>
+        </tbody>
+      </table></div>
+      <p class="why"><b>Takeaway:</b> Roborock is two-thirds of all returns (442 of 681) — returns analysis for this operation is, in practice, Roborock analysis.</p>
+    </div>
+
+    <!-- D. Hohem -->
+    <div class="box" style="margin-top:1rem">
+      <span class="tag real">Real data</span>
+      <h3>D · Hohem Amazon orders (fulfilled by merchant), Nov 2025 – Jun 2026</h3>
+      <p>Source: <b>Hohem Amazon Order</b> sheet · As of 24 Nov 2026. Aggregates only — this sheet contains buyer contact details, none of which were copied here.</p>
+      <div class="cards">
+        <div class="card"><p class="label">Orders</p><p class="value">34</p><p class="note">34 units in total across the period.</p></div>
+        <div class="card"><p class="label">Completed</p><p class="value">32 · 94%</p><p class="note">Only 2 orders cancelled.</p></div>
+        <div class="card"><p class="label">Peak month</p><p class="value">Dec 2025</p><p class="note">16 of the 34 orders landed in December 2025.</p></div>
+      </div>
+      <div class="grid2" style="margin-bottom:0">
+        <div>
+          <div id="chart-hohem-month"></div>
+          <p class="why"><b>Takeaway:</b> Nearly half the Hohem volume arrived in one month — Dec 2025 (16 of 34) — a classic Christmas spike on a small, seasonal channel.</p>
+        </div>
+        <div>
+          <div id="chart-hohem-carrier"></div>
+          <p class="why"><b>Takeaway:</b> Australia Post carried two-thirds of Hohem orders (23 of 34); StarTrack (5) and Allied Express (3) covered the rest, with 2 orders unlabelled and 1 sent Australia Post Express.</p>
+        </div>
+      </div>
+      <p class="why"><b>Takeaway:</b> Top products: iSteady M7 Black 13, iSteady V3 White 10, iSteady M6 Kit 4, iSteady X3 Black 4 — a two-product channel, so stock cover on those two models is what matters.</p>
+    </div>
+
+    <!-- Audit note -->
+    <div class="box" style="margin-top:1rem">
+      <h3>What was checked, and what could not be used — source audit</h3>
+      <p>All 22 saved favorites were reviewed read-only on 24 Nov 2026. Four Google Sheets produced the figures above. The rest could not contribute data, for the reasons below — nothing was logged into, and nothing in any source was changed.</p>
+      <div class="tblwrap"><table class="stack-table">
+        <thead><tr><th>Favorite</th><th>Verdict</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td data-h="Favorite">Online Order Inquiries (Google Sheets)</td><td data-h="Verdict"><b>Used</b></td><td data-h="Why">Section A. Older duplicate tabs and the historical Watch List (570 rows, Nov 2025 – Mar 2026, mostly no status) were not charted.</td></tr>
+          <tr><td data-h="Favorite">Costco Amazon x 360 delivery 2026 (Google Sheets)</td><td data-h="Verdict"><b>Used</b></td><td data-h="Why">Section B. The Costco EV tab is empty and the Z70 collection tab is notes only; the RA timetable tab is a reference schedule, not order data.</td></tr>
+          <tr><td data-h="Favorite">360 ILS RETURN LIST (Google Sheets)</td><td data-h="Verdict"><b>Used</b></td><td data-h="Why">Section C — all four tabs.</td></tr>
+          <tr><td data-h="Favorite">Hohem Amazon Order (Google Sheets)</td><td data-h="Verdict"><b>Used — aggregates only</b></td><td data-h="Why">Section D. The sheet holds buyer names, phone numbers and addresses; none were copied anywhere.</td></tr>
+          <tr><td data-h="Favorite">Air Sea Freight Tracking (.xlsx file)</td><td data-h="Verdict"><b>Blocked</b></td><td data-h="Why">It is an Office file, not a Google Sheet, and the Drive connection needed to open it was not available — so no air/sea freight figures are charted. The road-freight note on tab 2 stands as stated in the work records.</td></tr>
+          <tr><td data-h="Favorite">RA NUMBER Roborock issued (.xlsx, Technocity SharePoint)</td><td data-h="Verdict">Not used</td><td data-h="Why">SharePoint sign-in required; not opened.</td></tr>
+          <tr><td data-h="Favorite">360 SharePoint — Shared Documents; Oct 26 documents</td><td data-h="Verdict">Not used</td><td data-h="Why">SharePoint sign-in required; not opened.</td></tr>
+          <tr><td data-h="Favorite">OneDrive — Products Management; 2026 SOH &amp; Incoming Stock</td><td data-h="Verdict">Not used</td><td data-h="Why">OneDrive sign-in required; not opened — so stock-on-hand and incoming-stock figures are not in this dashboard.</td></tr>
+          <tr><td data-h="Favorite">Cin7 (login, password-reset page, single sales order)</td><td data-h="Verdict">Not used</td><td data-h="Why">Sign-in pages and a single-order page; no login attempted.</td></tr>
+          <tr><td data-h="Favorite">Shopify — Segway Australia Orders</td><td data-h="Verdict">Not used</td><td data-h="Why">Sign-in-gated admin page; no login attempted.</td></tr>
+          <tr><td data-h="Favorite">CartonCloud Dashboard; EWE login</td><td data-h="Verdict">Not used</td><td data-h="Why">Sign-in-gated; no login attempted.</td></tr>
+          <tr><td data-h="Favorite">Colladium (Costco portal); Costco Traffic prepaid login</td><td data-h="Verdict">Not used</td><td data-h="Why">Sign-in-gated B2B portals; no login attempted.</td></tr>
+          <tr><td data-h="Favorite">AusPost Merchant Portal; AusPost Business Support Portal</td><td data-h="Verdict">Not used</td><td data-h="Why">Sign-in-gated; no login attempted.</td></tr>
+          <tr><td data-h="Favorite">MyTeamGE (Team Global Express)</td><td data-h="Verdict">Not used</td><td data-h="Why">Sign-in-gated; no login attempted.</td></tr>
+          <tr><td data-h="Favorite">Allied Express Track &amp; Trace</td><td data-h="Verdict">Not used</td><td data-h="Why">Public page, but it is a single-parcel lookup — there is no aggregate data to read without a consignment number.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="why"><b>Takeaway:</b> Four of 22 favorites held readable data, and all four are in this tab. Everything else is behind a login that was deliberately not attempted — the sources were read, never touched.</p>
+    </div>
+
+    <p class="src"><b>Sources &amp; notes:</b> All figures on this tab are aggregated counts from the four Google Sheets named above, read on 24 Nov 2026 (as-of date). Caveats: inquiry topic counts are keyword counts and one item can match several topics; the Delivering unit total (23,461) is a quantity-column count across Costco, Amazon and ALDI rows, not revenue; the Delivered tab's columns shift between rows, so only its counts and company split are reported; return outcomes are grouped from free-text action values, and 165 records carry another or no recorded outcome. No row-level or personal data is shown.</p>
+  </section>
 </main>
-<div id="tooltip" class="tooltip" role="tooltip" hidden></div>
-<script type="application/json" id="data">{"exceptions": [{"ExceptionID": "E1", "Channel": "Unspecified", "Example": "Quantity correction", "OriginalQty": "10", "CorrectedQty": "6", "ReturnedCartons": "", "ReturnCost": "", "Detail": "Order quantity corrected from 10 to 6 units.", "Source": "real examples from Zoey's chats, Nov 2026"}, {"ExceptionID": "E2", "Channel": "Costco portal", "Example": "Cancelled Costco order", "OriginalQty": "", "CorrectedQty": "", "ReturnedCartons": "", "ReturnCost": "", "Detail": "Voided in Cin7 to release stock for H60.", "Source": "real examples from Zoey's chats, Nov 2026"}, {"ExceptionID": "E3", "Channel": "Unspecified", "Example": "Damaged-goods return", "OriginalQty": "", "CorrectedQty": "", "ReturnedCartons": "1", "ReturnCost": "8.6", "Detail": "360 paid the freight.", "Source": "real examples from Zoey's chats, Nov 2026"}], "channels": [{"Channel": "Costco portal"}, {"Channel": "Unspecified"}, {"Channel": "Shopify"}, {"Channel": "Amazon"}], "systems": [{"System": "Shopify", "Stage": "Order intake", "StageSort": "1", "Coverage": "Order source"}, {"System": "Client portals", "Stage": "Order intake", "StageSort": "1", "Coverage": "Order sources"}, {"System": "Costco portal (Colladium)", "Stage": "Order intake", "StageSort": "1", "Coverage": "Costco's dedicated ordering portal for 360 (Colladium EDI/B2B network); includes Costco Traffic prepaid login"}, {"System": "Cin7", "Stage": "Processing", "StageSort": "2", "Coverage": "Validate order details and release orders for warehouse"}, {"System": "CartonCloud", "Stage": "Warehouse / 3PL", "StageSort": "3", "Coverage": "Coordinate warehouse or 3PL fulfilment"}, {"System": "EWE", "Stage": "Tracking / delivery", "StageSort": "4", "Coverage": "Tracking including WA warehouse redirect. Tracking numbers unavailable in readable chats."}, {"System": "AusPost", "Stage": "Tracking / delivery", "StageSort": "4", "Coverage": "Tracking and delivery — Merchant Portal and Business Support Portal"}, {"System": "DHL", "Stage": "Tracking / delivery", "StageSort": "4", "Coverage": "Tracking and delivery"}, {"System": "Allied Express", "Stage": "Tracking / delivery", "StageSort": "4", "Coverage": "Track & Trace carrier tracking"}, {"System": "MyTeamGE (Team Global Express)", "Stage": "Tracking / delivery", "StageSort": "4", "Coverage": "International freight (Global Forwarding) tracking, rates, shipment creation and booking"}, {"System": "SharePoint / OneDrive (360)", "Stage": "Working sheets & records", "StageSort": "5", "Coverage": "SOH & incoming stock, product management and shared documents"}, {"System": "Google Sheets", "Stage": "Working sheets & records", "StageSort": "5", "Coverage": "Working sheets: online order inquiries, ILS return list, air-sea freight tracking, Amazon orders, Costco Amazon delivery"}, {"System": "Technocity SharePoint (Roborock RA)", "Stage": "Working sheets & records", "StageSort": "5", "Coverage": "Roborock RA numbers issued (returns)"}, {"System": "Excel", "Stage": "Analysis tools", "StageSort": "6", "Coverage": "Listed tool"}, {"System": "Power BI", "Stage": "Analysis tools", "StageSort": "6", "Coverage": "Listed tool"}, {"System": "Codex", "Stage": "AI tools", "StageSort": "7", "Coverage": "Python order-pushing automation"}, {"System": "Claude", "Stage": "AI tools", "StageSort": "7", "Coverage": "AI tool used. The skill can be adapted to SKILL.md format."}], "freight_modes": [{"Mode": "Air", "Coverage": "Air-sea freight sheet is in scope — 'Air Sea Freight Tracking' Google Sheet (from Zoey's favorites, Nov 2026)."}, {"Mode": "Sea", "Coverage": "Air-sea freight sheet is in scope — 'Air Sea Freight Tracking' Google Sheet (from Zoey's favorites, Nov 2026)."}, {"Mode": "Road", "Coverage": "Cross-state freight to WA/Perth. Melbourne dispatch was described as faster and cheaper than Brisbane."}], "order_lines": [{"LineID": "L1", "ExampleID": "O1", "SKU": "H60", "Quantity": "10", "Source": "real examples from Zoey's chats, Nov 2026"}], "carton_examples": [{"CartonID": "C1", "Dimensions": "100x150x170", "Source": "real examples from Zoey's chats, Nov 2026"}, {"CartonID": "C2", "Dimensions": "30x40x20", "Source": "real examples from Zoey's chats, Nov 2026"}], "automation_parameters": [{"EstimateFraction": "0.65", "EstimateLabel": "Zoey's revised estimate (~60–70%)", "CoverageMinPct": "0", "CoverageMaxPct": "100", "CoverageStepPct": "1", "CoverageDefaultPct": "100", "Source": "Zoey’s stated estimate in supplied brief; coverage controls are scenario assumptions."}], "orders": [{"ExampleID": "O1", "Channel": "Costco portal", "Example": "Costco PO 1991533680", "PO": "1991533680", "OrderValue": "", "ComponentA": "", "ComponentB": "", "Source": "real examples from Zoey's chats, Nov 2026"}, {"ExampleID": "O2", "Channel": "Unspecified", "Example": "Order value example", "PO": "", "OrderValue": "20000", "ComponentA": "", "ComponentB": "", "Source": "real examples from Zoey's chats, Nov 2026"}, {"ExampleID": "O3", "Channel": "Unspecified", "Example": "Split order example", "PO": "", "OrderValue": "8600", "ComponentA": "4200", "ComponentB": "4400", "Source": "real examples from Zoey's chats, Nov 2026"}]}</script>
+
+<footer>
+  Order Fulfilment Analytics · 360 International Trading · Built from verified worked examples, one clearly labelled simulated portfolio model, and aggregated real data read 24 Nov 2026. Estimates are labelled estimates; the What-if figure is modelled, not measured. No customer personal data appears on this page. Sources were read only — nothing in any source system or spreadsheet was changed.
+  <br /><a href="data:application/octet-stream;base64,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siphcCUe/6Va5axIsi9Ua/f9vGqVBd5RTqrWu+gnBLPOt4pVmWdnbCSu54M7tnNyOSgdvtAHtHv0MchfpDTu6rcsKvTLoPF2EA1GZPKACQLTr9kQRPKB11Qr0YS75yMHog73yg6eeCagUWwj/vWusMOdVsn8pPikSb3II+7XKvw6LGNX404LKomFHQNBa0eNioCkuVfOjp5oHI0hGs5ASw59+hRobP5oxL5m0jjVBxEXC1TgjK5kxUiKO02foInYoyFfrcDLIdwghhkMye0GP75mOyyaBnAh4PHFRuvpNdwkQJIbYL060CvA49gjwYJuYCWRdr2dxENHEc+qcxJ69dvv/OILY7vj7Vje3WCM5OHpf9JZuupY0yV2C9hfvDR/OfP/B4rGuC8KZW5kc3RyZWFtCmVuZG9iago3IDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLUJvbGQKL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcKL1N1YnR5cGUgL1R5cGUxCi9UeXBlIC9Gb250Cj4+CmVuZG9iago4IDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhCi9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nCi9TdWJ0eXBlIC9UeXBlMQovVHlwZSAvRm9udAo+PgplbmRvYmoKOSAwIG9iago8PAovRm9udCA8PC9GMSA3IDAgUgovRjIgOCAwIFI+PgovUHJvY1NldCBbL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSV0KPj4KZW5kb2JqCjEwIDAgb2JqCjw8Ci9Gb250IDw8L0YxIDcgMCBSCi9GMiA4IDAgUj4+Ci9Qcm9jU2V0IFsvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJXQo+PgplbmRvYmoKMTEgMCBvYmoKPDwKL0NyZWF0aW9uRGF0ZSAoRDoyMDI2MTEyNDExNDAzNlopCj4+CmVuZG9iagp4cmVmCjAgMTIKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDE1IDAwMDAwIG4gCjAwMDAwMDAxMDggMDAwMDAgbiAKMDAwMDAwMDIxMSAwMDAwMCBuIAowMDAwMDAwMjkxIDAwMDAwIG4gCjAwMDAwMDMwMDAgMDAwMDAgbiAKMDAwMDAwMzA4MSAwMDAwMCBuIAowMDAwMDA0ODE0IDAwMDAwIG4gCjAwMDAwMDQ5MTYgMDAwMDAgbiAKMDAwMDAwNTAxMyAwMDAwMCBuIAowMDAwMDA1MTEwIDAwMDAwIG4gCjAwMDAwMDUyMDggMDAwMDAgbiAKdHJhaWxlcgo8PAovU2l6ZSAxMgovUm9vdCAyIDAgUgovSW5mbyAxMSAwIFIKL0lEIFs8NjYwRjA0M0I1N0MxNDQxQTJENzRFRkU0MzY3RkQ1ODA+PDY2MEYwNDNCNTdDMTQ0MUEyRDc0RUZFNDM2N0ZENTgwPl0KPj4Kc3RhcnR4cmVmCjUyNjQKJSVFT0YK" download>Download the professional memo (PDF)</a> — updated 24 Nov 2026 to describe the Real Data section, its sources and its as-of date.
+</footer>
+
 <script>
-'use strict';
-const data = JSON.parse(document.querySelector('#data').textContent);
-const param = data.automation_parameters[0];
-const evidence = data.orders[0].Source;
-const content = document.querySelector('#content');
-const nav = [...document.querySelectorAll('[data-page]')];
-const channel = document.querySelector('#channel');
-const tooltip = document.querySelector('#tooltip');
-const state = {page:'operations', channel:'', system:'', tracking:'', mode:'', coverage:Number(param.CoverageDefaultPct)};
-const pages = {
-  operations:['Operations Overview','Order intake, release and exception handling'],
-  logistics:['Logistics Deep Dive','Freight scope, tracking coverage and warehouse coordination'],
-  business:['Business Analysis','Order value examples and a processing-time scenario'],cin7:['Cin7 Order Push','Cin7 order-push flow for the Shopify Roborock-Store channel']
-};
-const footerNotes = {
-  operations:'The correction and cancellation have no verified link to PO 1991533680. System updates and the Shopify and Amazon channel options come from Zoey’s work favorites export (Nov 2026).',
-  logistics:'Zoey’s work favorites export (Nov 2026) identifies the Air Sea Freight Tracking Google Sheet. Sheet contents and EWE tracking numbers were unavailable in the readable chats. Carton dimension units were unspecified.',
-  business:'The order values are isolated examples. What-if outputs show shares of baseline processing time. Anchor · ' + param.EstimateLabel + '.',cin7:'The Cin7 Order Push walkthrough describes the automation flow as supplied. The demo order #RoboStore44551 is an illustrative example, not a real order.'
-};
-const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
-const money = (value, digits=0) => '$' + Number(value).toLocaleString('en-US',{minimumFractionDigits:digits,maximumFractionDigits:digits});
-const percent = value => new Intl.NumberFormat('en',{style:'percent',maximumFractionDigits:1}).format(value);
-const matchesChannel = row => !state.channel || row.Channel === state.channel;
-const empty = '<p class="empty">No matching example under this channel filter.</p>';
-const card = (label,value,detail,accent=false) => `<article class="card ${accent?'accent':''}"><p class="card-label">${esc(label)}</p><p class="value">${esc(value ?? '—')}</p><small>${esc(value == null?'Excluded by channel filter':detail)}</small></article>`;
-const options = (rows,key,selected) => rows.map(row => `<option${row[key]===selected?' selected':''}>${esc(row[key])}</option>`).join('');
-const slicer = (label,key,rows,column,all) => `<label class="filter">${label}<select data-filter="${key}"><option value="">${all}</option>${options(rows,column,state[key])}</select></label>`;
-const coverageRows = (rows,key,showStage=false) => `<div class="coverage-list" tabindex="0" aria-label="Coverage details">${rows.map((row,index) => {
-  const stage = showStage && row.Stage !== rows[index-1]?.Stage
-    ? `<div class="coverage-row"><b>${esc(row.Stage)}</b></div>` : '';
-  return stage + `<div class="coverage-row"><b>${esc(row[key])}</b><span>${esc(row.Coverage)}</span></div>`;
-}).join('')}</div>`;
-function bars(rows,max) {
-  if (!rows.length) return empty;
-  return `<div class="chart" role="group" aria-label="Example comparison chart">${rows.map(([label,value,display,detail,color='var(--green)']) => {
-    const tip = esc(label + ' · ' + display + (detail ? ' · ' + detail : ''));
-    return `<div class="chart-row"><span>${esc(label)}</span><div class="chart-track"><svg viewBox="0 0 100 24" preserveAspectRatio="none" role="group" aria-label="${esc(label)}"><rect width="100" height="24" rx="2" fill="#edf1ed"/><rect width="${100*Number(value)/max}" height="24" rx="2" fill="${color}" tabindex="0" aria-label="${tip}" data-tip="${tip}"/></svg><strong>${esc(display)}</strong></div></div>`;
-  }).join('')}</div>`;
-}
-function operations() {
-  const po = data.orders.find(row=>row.PO && matchesChannel(row));
-  const line = po && data.order_lines.find(row=>row.ExampleID===po.ExampleID);
-  const correction = data.exceptions.find(row=>row.OriginalQty && matchesChannel(row));
-  const cancelled = data.exceptions.find(row=>row.ExceptionID==='E2' && matchesChannel(row));
-  const stages = [...new Set(data.systems.filter(row=>Number(row.StageSort)<=4).map(row=>row.Stage))];
-  const workflow = stages.map(stage=>`<div class="step"><b>${esc(stage)}</b>${esc(data.systems.filter(row=>row.Stage===stage && row.System!=='Costco portal (Colladium)').map(row=>row.System).join(' · '))}</div>`).join('');
-  const systems = data.systems.filter(row=>!state.system || row.System===state.system);
-  return `<div class="cards">${card('Costco PO units',line?.Quantity,'PO 1991533680 · H60',true)}${card('Original quantity',correction?.OriginalQty,'Units before correction')}${card('Corrected quantity',correction?.CorrectedQty,'Units after correction')}</div>
-    <div class="grid"><article class="panel"><h3>Order quantity correction</h3><p class="note">${esc(evidence)}</p>${bars(correction?[['Before',correction.OriginalQty,correction.OriginalQty+' units','Original order quantity','var(--gold)'],['After',correction.CorrectedQty,correction.CorrectedQty+' units','Corrected order quantity']]:[], Number(correction?.OriginalQty || 1))}</article>
-    <article class="panel"><h3>Costco order handling</h3><p class="note">${esc(evidence)}</p>
-    ${line?`<div class="evidence"><p><b>PO ${esc(po.PO)}</b></p><p>${esc(line.Quantity)} units of ${esc(line.SKU)}</p></div>`:empty}
-    ${cancelled?`<div class="evidence"><p><b>${esc(cancelled.Example)}</b></p><p>${esc(cancelled.Detail)}</p></div>`:''}</article></div>
-    <article class="panel"><div class="panel-header"><div><h3>Order-to-delivery workflow</h3><p class="note">System roles and operating coverage</p></div>${slicer('System','system',data.systems,'System','All systems')}</div>
-    <div class="flow">${workflow}</div>${coverageRows(systems,'System',true)}</article>`;
-}
-function logistics() {
-  const returned = data.exceptions.find(row=>row.ReturnedCartons && matchesChannel(row));
-  const tracking = data.systems.filter(row=>row.Stage==='Tracking / delivery');
-  const modes = data.freight_modes.filter(row=>!state.mode || row.Mode===state.mode);
-  const support = ['Costco RA','Shortages','PO errors','Cross-state transfers','Invoice reissue','Returns','LIT','Warehouse inventory allocation','Order follow-up'];
-  return `<div class="cards">${card('Returned cartons',returned?.ReturnedCartons,'Damaged-goods return',true)}${card('Return cost',returned?money(returned.ReturnCost,2):null,'Total cost · 360 paid freight')}</div>
-    <div class="grid"><article class="panel"><h3>Damaged-goods return</h3><p class="note">${esc(evidence)}</p>${bars(returned?[['Returned',returned.ReturnedCartons,returned.ReturnedCartons+' carton','Total cost '+money(returned.ReturnCost,2)+' · '+returned.Detail]]:[],1)}
-    ${returned?`<p class="note" style="margin-top:12px">${esc(returned.Detail)}</p>`:''}</article>
-    <article class="panel"><h3>Carton examples</h3><p class="note">${esc(evidence)}</p><ul class="entries">${data.carton_examples.map(row=>`<li><b>${esc(row.Dimensions)}</b></li>`).join('')}</ul></article></div>
-    <div class="grid"><article class="panel"><div class="panel-header"><h3>Freight coverage</h3>${slicer('Freight mode','mode',data.freight_modes,'Mode','All modes')}</div>${coverageRows(modes,'Mode')}</article>
-    <article class="panel"><div class="panel-header"><h3>Tracking &amp; delivery</h3>${slicer('System','tracking',tracking,'System','All carriers')}</div>${coverageRows(tracking.filter(row=>!state.tracking || row.System===state.tracking),'System')}</article></div>
-    <article class="panel"><h3>Exception support</h3><div class="chips">${support.map(item=>`<span>${item}</span>`).join('')}</div></article>`;
-}
-function business() {
-  const standalone = data.orders.find(row=>row.ExampleID==='O2' && matchesChannel(row));
-  const split = data.orders.find(row=>row.ExampleID==='O3' && matchesChannel(row));
-  const rows = [];
-  if (standalone) rows.push(['Standalone order',standalone.OrderValue,money(standalone.OrderValue),'Stated value']);
-  if (split) rows.push(['Split component A',split.ComponentA,money(split.ComponentA),'Split order total '+money(split.OrderValue),'var(--gold)'],
-                       ['Split component B',split.ComponentB,money(split.ComponentB),'Split order total '+money(split.OrderValue),'var(--gold)']);
-  return `<div class="cards">${card('Order value example',standalone?money(standalone.OrderValue):null,'Standalone order')}${card('Split order value',split?money(split.OrderValue):null,split?money(split.ComponentA)+' + '+money(split.ComponentB):'')}
-    <article class="card accent"><p class="card-label">Order-processing time reduction</p><p class="value" style="font-size:clamp(22px,2.25vw,34px)">${esc(param.EstimateLabel)}</p><small>Stated by Zoey · scenario anchor</small></article></div>
-    <div class="grid"><article class="panel"><h3>Order values in the chats</h3><p class="note">${esc(evidence)}</p>${bars(rows, Math.max(1, ...rows.map(row => Number(row[1]))))}</article>
-    <article class="panel model"><h3>Automation coverage · What-if</h3><p class="note">Anchor · ${esc(param.EstimateLabel)}</p>
-    <label class="slider-label" for="coverage">Hypothetical coverage <output id="coverage-value" for="coverage"></output></label>
-    <input id="coverage" type="range" min="${param.CoverageMinPct}" max="${param.CoverageMaxPct}" step="${param.CoverageStepPct}" value="${state.coverage}">
-    <div id="scenario-results" class="results" aria-live="polite"></div><div id="scenario-chart" class="chart"></div>
-    <p class="note" style="margin-top:9px">Share of baseline processing time. Modelled savings = estimate × selected coverage.</p></article></div>
-    <article class="panel"><h3>Automation &amp; handover</h3><p class="note">The Codex-written Python order-pushing program runs as a local Codex desktop skill on Zoey’s Mac.</p>
-    <div class="handover"><div><b>Transfer the project</b>Export the full Project folder or clone via GitHub. Include SKILL.md, reference data and scripts.</div>
-    <div><b>Restore and verify</b>Re-set Python packages, API keys, file paths and system permissions. Rerun the same PO test data and verify identical results.</div>
-    <div><b>Account and tool portability</b>Conversation history and memory are excluded. The skill can be adapted to Claude’s SKILL.md format.</div></div>
-    <p class="note">Zoey pays for her Codex membership personally, without company reimbursement.</p></article>`;
-}
-function cin7(){return `<div class="cards">${card('Channel','Shopify','Roborock-Store channel',true)}${card('Trigger','Cin7 Login','Click Cin7 Login to start a round')}${card('Rounds','About 2 per day','Execution loop runs about two rounds per day')}</div><article class="panel"><h3>Cin7 Order Push Flow</h3><p class="note">Visual interactive walkthrough of the Cin7 order-push automation at 360 International Trading, for the Shopify Roborock-Store channel. Click any stage to expand what happens there, its checks and its guardrails.</p><div class="cin7-flow"><details class="cin7-stage"><summary><span class="cin7-num">Step 1</span><b>Cleanse</b><span class="cin7-hint">Click to expand</span></summary><ul><li><b>What happens:</b> normalise phone numbers (+61… → 0…); delete machine-generated rows (utm / mirakl / marketplace order IDs) from Internal Comments while leaving human notes untouched; merge split street-number addresses.</li><li><b>Checks and guardrails:</b> only phone, Internal Comments and that one authorised address merge may be written.</li></ul></details><details class="cin7-stage"><summary><span class="cin7-num">Step 2</span><b>Filter</b><span class="cin7-hint">Click to expand</span></summary><ul><li><b>What happens:</b> skip rules are applied before any warehouse selection.</li><li><b>Skipped orders:</b> customer PO number used as a do-not-push flag; New Zealand orders; PO Box / parcel locker addresses; marketplace orders; oversold or chronically out-of-stock SKUs; orders with no SKU; $5 placeholder lines; all-damaged lines.</li><li><b>Guardrail:</b> skipped orders are held, never force-pushed and never auto-backordered.</li></ul></details><details class="cin7-stage"><summary><span class="cin7-num">Branch</span><b>Branch → Head Office</b><span class="cin7-hint">Click to expand</span></summary><ul><li><b>What happens:</b> sales Branch is switched to 01 Head Office before any dispatch popup is opened.</li><li><b>Check:</b> the branch switch happens before any dispatch popup is opened.</li></ul></details><details class="cin7-stage"><summary><span class="cin7-num">Step 2</span><b>Warehouse selection</b><span class="cin7-hint">Click to expand</span></summary><ul><li><b>What happens:</b> read bin stock-on-hand from the dispatch popup for every line; take the intersection of shippable warehouses; pick by state priority — NSW/ACT: Sydney first; VIC/TAS/SA/NT: Melbourne first; QLD: Brisbane first.</li><li><b>Checks and guardrails:</b> only a warehouse with bin SOH greater than 2 may dispatch. The WA warehouse is not used in the automatic rotation.</li></ul></details><details class="cin7-stage"><summary><span class="cin7-num">Step 3</span><b>Push</b><span class="cin7-hint">Click to expand</span></summary><ul><li><b>What happens:</b> dispatch line by line; Stage set to Release To Pick - WMS; Invoice Date set to today; Save to Admin; then read-back verification.</li></ul></details><details class="cin7-stage"><summary><span class="cin7-num">Step 4.5</span><b>Restock sweep</b><span class="cin7-hint">Click to expand</span></summary><ul><li><b>What happens:</b> handles chronically out-of-stock SKUs, in FIFO order, single-item orders only.</li></ul></details><details class="cin7-stage"><summary><span class="cin7-num">Report</span><b>Report</b><span class="cin7-hint">Click to expand</span></summary><ul><li><b>What happens:</b> generate a PDF report, build an index, and send a notification as the record of that round.</li></ul></details></div></article><article class="panel"><h3>Execution loop</h3><p class="note">Triggered by clicking Cin7 Login. The loop runs about two rounds per day.</p><div class="cin7-loop"><span>R</span><i>→</i><span>E</span><i>→</i><span>B</span><i>→</i><span>L</span><i>→</i><span>Q</span><i>→</i><span>S</span><i>→</i><span>P</span><i>→</i><span>V</span><i>→</i><span>U</span><i>→</i><span>T</span><i>→</i><span>Z</span></div></article><article class="panel"><h3>Illustrative demo — example order #RoboStore44551</h3><p class="note">Illustrative demo only — this example order is not a real order. Roborock, Sydney NSW. Press Play demo to walk the order through all seven stages.</p><div class="cin7-controls"><button class="reset" id="cin7-play" onclick="cin7Play()">Play demo</button><button class="reset" onclick="cin7Reset()">Reset demo</button></div><ol class="cin7-demo" id="cin7-demo"><li><b>Step 1 · Cleanse</b><span class="cin7-status">Not started yet.</span></li><li><b>Step 2 · Filter</b><span class="cin7-status">Not started yet.</span></li><li><b>Branch → Head Office</b><span class="cin7-status">Not started yet.</span></li><li><b>Step 2 · Warehouse selection</b><span class="cin7-status">Not started yet.</span></li><li><b>Step 3 · Push</b><span class="cin7-status">Not started yet.</span></li><li><b>Step 4.5 · Restock sweep</b><span class="cin7-status">Not started yet.</span></li><li><b>Report</b><span class="cin7-status">Not started yet.</span></li></ol><p class="note" id="cin7-demo-note">Press Play demo to walk the example order through all seven stages.</p></article><article class="panel"><h3>Guardrails</h3><p class="note">Hard rules for the Cin7 order-push flow.</p><div class="cin7-guard"><div><b>DRY-RUN mode</b>The flow runs in DRY-RUN mode.</div><div><b>3PL stays Do Not Transfer to 3PL</b>Release is a manual action — the automated flow never releases on its own.</div><div><b>Bin SOH greater than 2</b>Only a warehouse with bin SOH greater than 2 may dispatch.</div><div><b>Passwords are never read or typed</b>The flow never reads or types passwords.</div><div><b>No Cin7 API key</b>The flow runs on browser automation plus in-page JavaScript — no Cin7 API key is used.</div></div><p class="cin7-stop"><b>If any stage fails, the round stops.</b></p></article>`;}let cin7Timer=null;const cin7DemoSteps=['Phone normalised (+61… → 0…); machine-generated rows removed from Internal Comments; human notes kept; split street-number address merged.','No skip rule applied — the order is not held and proceeds to warehouse selection.','Sales Branch switched to 01 Head Office before the dispatch popup was opened.','360ILS-Sydney bin SOH 5 > 2 — Sydney first for NSW, so Sydney is selected.','Dispatched line by line; Stage set to Release To Pick - WMS; Invoice Date set to today; saved to Admin; read-back verified. 3PL stays Do Not Transfer to 3PL.','Restock sweep checked in FIFO order for chronically out-of-stock SKUs — single-item orders only.','PDF report generated, index built, notification sent as the record of this round.'];function cin7Play(){const list=document.querySelector('#cin7-demo');if(!list)return;const items=[...list.querySelectorAll('li')];const play=document.querySelector('#cin7-play');if(play)play.disabled=true;clearInterval(cin7Timer);let i=0;items.forEach(item=>{item.classList.remove('active','done');item.querySelector('.cin7-status').textContent='Not started yet.';});const note=document.querySelector('#cin7-demo-note');if(note)note.textContent='Demo running — walking order #RoboStore44551 through the seven stages.';cin7Timer=setInterval(()=>{const live=document.querySelector('#cin7-demo');if(!live){clearInterval(cin7Timer);cin7Timer=null;return;}if(i>0){items[i-1].classList.remove('active');items[i-1].classList.add('done');}if(i>=items.length){clearInterval(cin7Timer);cin7Timer=null;if(play)play.disabled=false;if(note)note.textContent='Demo complete — order #RoboStore44551 walked through all seven stages. 3PL stayed Do Not Transfer to 3PL.';return;}items[i].classList.add('active');items[i].querySelector('.cin7-status').textContent=cin7DemoSteps[i];i++;},1100);}function cin7Reset(){clearInterval(cin7Timer);cin7Timer=null;const list=document.querySelector('#cin7-demo');if(!list)return;list.querySelectorAll('li').forEach(item=>{item.classList.remove('active','done');item.querySelector('.cin7-status').textContent='Not started yet.';});const play=document.querySelector('#cin7-play');if(play)play.disabled=false;const note=document.querySelector('#cin7-demo-note');if(note)note.textContent='Press Play demo to walk the example order through all seven stages.';}function updateModel() {
-  hideTip();
-  const slider = document.querySelector('#coverage');
-  const saved = state.coverage/100 * Number(param.EstimateFraction);
-  const remaining = 1 - saved;
-  const savedLabel = 'Modelled time saved · '+percent(saved);
-  const remainingLabel = 'Modelled time remaining · '+percent(remaining);
-  document.querySelector('#coverage-value').textContent = percent(state.coverage/100);
-  slider.setAttribute('aria-valuetext',percent(state.coverage/100)+' hypothetical coverage');
-  document.querySelector('#scenario-results').innerHTML = `<div>Modelled time saved<strong>${percent(saved)}</strong></div><div>Modelled time remaining<strong>${percent(remaining)}</strong></div>`;
-  document.querySelector('#scenario-chart').innerHTML = `<svg viewBox="0 0 100 24" preserveAspectRatio="none" role="group" aria-label="What-if shares of baseline time">${saved>0?`<rect width="${100*saved}" height="24" fill="#146b59" tabindex="0" aria-label="${savedLabel}" data-tip="${savedLabel}"/>`:''}<rect x="${100*saved}" width="${100*remaining}" height="24" fill="#91b6a6" tabindex="0" aria-label="${remainingLabel}" data-tip="${remainingLabel}"/></svg>`;
-}
-function render() {
-  hideTip();
-  const [title,summary] = pages[state.page];
-  document.querySelector('#page-title').textContent = title;
-  document.querySelector('#page-summary').textContent = summary;
-  for (const button of nav) {
-    if (button.dataset.page===state.page) button.setAttribute('aria-current','page');
-    else button.removeAttribute('aria-current');
+(function(){
+  "use strict";
+  var NS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent){
+    var n = document.createElementNS(NS, tag);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(n);
+    return n;
   }
-  content.innerHTML = ({operations,logistics,business,cin7})[state.page]();
-  document.querySelector('#sources').innerHTML = `<b>Sources &amp; notes</b><p>Zoey Chao’s ChatGPT/Codex chats as supplied, read 24 Nov 2026 · ${esc(evidence)}.</p><p>Total order volumes, error rates and measured minutes per order are unavailable. ${esc(footerNotes[state.page])}</p>`;
-  if (state.page==='business') updateModel();
-}
-function hideTip() {tooltip.hidden=true;}
-function showTip(mark,x,y) {
-  tooltip.textContent = mark.dataset.tip;
-  tooltip.hidden=false;
-  tooltip.style.left = Math.max(8,Math.min(x+12,window.innerWidth-tooltip.offsetWidth-8))+'px';
-  tooltip.style.top = Math.max(8,Math.min(y+12,window.innerHeight-tooltip.offsetHeight-8))+'px';
-}
-channel.insertAdjacentHTML('beforeend',options(data.channels,'Channel',''));
-channel.addEventListener('change',()=>{state.channel=channel.value;render();});
-for (const button of nav) button.addEventListener('click',()=>{state.page=button.dataset.page;render();});
-document.querySelector('#reset').addEventListener('click',()=>{
-  Object.assign(state,{channel:'',system:'',tracking:'',mode:'',coverage:Number(param.CoverageDefaultPct)});
-  channel.value='';
-  render();
-});
-content.addEventListener('change',event=>{
-  const key = event.target.dataset.filter;
-  if (!key) return;
-  state[key]=event.target.value;
-  render();
-  content.querySelector(`[data-filter="${key}"]`).focus();
-});
-content.addEventListener('input',event=>{
-  if (event.target.id!=='coverage') return;
-  state.coverage=Number(event.target.value);
-  updateModel();
-});
-content.addEventListener('pointermove',event=>{
-  const mark=event.target.closest('[data-tip]');
-  if (mark) showTip(mark,event.clientX,event.clientY);
-  else hideTip();
-});
-content.addEventListener('pointerleave',hideTip);
-content.addEventListener('focusin',event=>{
-  if (!event.target.matches('[data-tip]')) return;
-  const bounds=event.target.getBoundingClientRect();
-  showTip(event.target,bounds.left+bounds.width/2,bounds.bottom);
-});
-content.addEventListener('focusout',hideTip);
-document.addEventListener('keydown',event=>{if(event.key==='Escape')hideTip();});
-render();
+  function text(parent, x, y, str, size, anchor, weight){
+    var t = el("text", {x:x, y:y, "font-size":size||12, "text-anchor":anchor||"start"}, parent);
+    if (weight) t.setAttribute("font-weight", weight);
+    t.textContent = str;
+    return t;
+  }
+  /* Horizontal bar chart. data: [{label, value, cls}] */
+  function hbar(id, data, opts){
+    opts = opts || {};
+    var host = document.getElementById(id);
+    if (!host) return;
+    var max = 0, i;
+    for (i=0;i<data.length;i++) if (data[i].value>max) max=data[i].value;
+    var labelW = opts.labelW || 118, valW = 52, rowH = 30, top = 6;
+    var W = 560, H = top + data.length*rowH + 4;
+    var svg = el("svg", {viewBox:"0 0 "+W+" "+H, "class":"chart", role:"img"}, host);
+    var title = el("title", {}, svg); title.textContent = opts.title || "";
+    var barArea = W - labelW - valW;
+    for (i=0;i<data.length;i++){
+      var d = data[i], y = top + i*rowH;
+      text(svg, labelW-8, y+16, d.label, 12, "end");
+      var w = max ? Math.max(2, (d.value/max)*barArea) : 2;
+      var r = el("rect", {x:labelW, y:y+4, width:w, height:18, rx:4, "class":"bar "+(d.cls||"")}, svg);
+      var tt = el("title", {}, r); tt.textContent = d.label+": "+d.value+(opts.unit?(" "+opts.unit):"");
+      text(svg, labelW+w+7, y+16, String(d.value), 12, "start", 700);
+    }
+  }
+  /* Vertical bar chart. data: [{label, value}] */
+  function vbar(id, data, opts){
+    opts = opts || {};
+    var host = document.getElementById(id);
+    if (!host) return;
+    var max = 0, i;
+    for (i=0;i<data.length;i++) if (data[i].value>max) max=data[i].value;
+    var W = 560, H = 240, base = 200, top = 26;
+    var svg = el("svg", {viewBox:"0 0 "+W+" "+H, "class":"chart", role:"img"}, host);
+    var title = el("title", {}, svg); title.textContent = opts.title || "";
+    el("line", {x1:34, y1:base, x2:W-8, y2:base, "class":"axis"}, svg);
+    var slot = (W-44)/data.length, bw = Math.min(44, slot*0.62);
+    for (i=0;i<data.length;i++){
+      var d = data[i];
+      var h = max ? (d.value/max)*(base-top) : 0;
+      var x = 38 + i*slot + (slot-bw)/2;
+      var r = el("rect", {x:x, y:base-h, width:bw, height:h, rx:4, "class":"bar "+(d.cls||"")}, svg);
+      var tt = el("title", {}, r); tt.textContent = d.label+": "+d.value;
+      text(svg, x+bw/2, base-h-6, String(d.value), 12, "middle", 700);
+      text(svg, x+bw/2, base+17, d.label, 11, "middle");
+    }
+  }
+
+  hbar("chart-qty", [
+    {label:"Before correction", value:10},
+    {label:"After correction", value:6, cls:"gold"}
+  ], {title:"Costco purchase order quantity: 10 before, 6 after correction", labelW:130, unit:"units"});
+
+  hbar("chart-return", [
+    {label:"Cartons returned", value:1},
+    {label:"Return cost ($)", value:8.6, cls:"gold"}
+  ], {title:"Damaged-goods return: 1 carton, $8.60 freight paid by 360", labelW:130});
+
+  vbar("chart-values", [
+    {label:"Standalone order", value:20000},
+    {label:"Split part 1", value:4200, cls:"gold"},
+    {label:"Split part 2", value:4400, cls:"gold"}
+  ], {title:"Order value examples in dollars"});
+
+  hbar("chart-inq-status", [
+    {label:"Completed", value:153},
+    {label:"In progress", value:70, cls:"soft"},
+    {label:"Pending", value:31, cls:"gold"}
+  ], {title:"Online Order Inquiries by status, Nov 2026 (total 254)", unit:"items"});
+
+  hbar("chart-inq-topics", [
+    {label:"Address change", value:84},
+    {label:"Cancellation", value:37, cls:"soft"},
+    {label:"Tracking / delivery", value:15, cls:"soft"},
+    {label:"Return", value:8, cls:"soft"},
+    {label:"Refund", value:3, cls:"soft"},
+    {label:"Stock / backorder", value:2, cls:"soft"}
+  ], {title:"Inquiry topics, keyword mentions (one item can match several)", unit:"mentions"});
+
+  hbar("chart-deliv-channel", [
+    {label:"Amazon", value:69},
+    {label:"Costco AU", value:44, cls:"soft"},
+    {label:"No label / mixed", value:15, cls:"gold"},
+    {label:"Costco NZ", value:5, cls:"soft"},
+    {label:"ALDI", value:2, cls:"soft"}
+  ], {title:"Orders in transit by channel (total 135)", unit:"orders"});
+
+  vbar("chart-deliv-month", [
+    {label:"Jan", value:1},{label:"May", value:7},{label:"Jun", value:3},
+    {label:"Aug", value:6},{label:"Sep", value:26},{label:"Oct", value:6},
+    {label:"Nov", value:28, cls:"gold"},{label:"Dec", value:4}
+  ], {title:"Orders in transit by booking month 2026 (54 undated, not shown)"});
+
+  vbar("chart-ret-month", [
+    {label:"Dec 25", value:65},{label:"Jan", value:105, cls:"gold"},{label:"Feb", value:65},
+    {label:"Mar", value:41},{label:"Apr", value:44},{label:"May", value:29},
+    {label:"Jun", value:23},{label:"Jul", value:21},{label:"Aug", value:30},
+    {label:"Sep", value:38},{label:"Oct", value:21},{label:"Nov", value:17}
+  ], {title:"Melbourne returns by month, Dec 2025 to Nov 2026 (2 undated, not shown)"});
+
+  hbar("chart-ret-outcome", [
+    {label:"Received in CartonCloud (MEL)", value:277},
+    {label:"Back into stock", value:186, cls:"soft"},
+    {label:"Sent to Technocity", value:31, cls:"soft"},
+    {label:"Resent to customer", value:13, cls:"soft"},
+    {label:"Disposed", value:9, cls:"gold"},
+    {label:"Other / not recorded", value:165, cls:"soft"}
+  ], {title:"Return outcomes, all warehouses (total 681 records)", labelW:170, unit:"records"});
+
+  vbar("chart-hohem-month", [
+    {label:"Nov 25", value:2},{label:"Dec 25", value:16, cls:"gold"},{label:"Jan", value:4},
+    {label:"Feb", value:1},{label:"Mar", value:1},{label:"Apr", value:8},
+    {label:"Jun", value:2}
+  ], {title:"Hohem Amazon orders by month, Nov 2025 to Jun 2026 (total 34)"});
+
+  hbar("chart-hohem-carrier", [
+    {label:"Australia Post", value:23},
+    {label:"StarTrack", value:5, cls:"soft"},
+    {label:"Allied Express", value:3, cls:"soft"},
+    {label:"No carrier label", value:2, cls:"gold"},
+    {label:"AusPost Express", value:1, cls:"soft"}
+  ], {title:"Hohem Amazon orders by carrier (total 34)", labelW:130, unit:"orders"});
+
+  /* What-if model */
+  var coverage = document.getElementById("coverage");
+  function renderWhatif(){
+    var c = Number(coverage.value);
+    var saved = Math.round(0.65 * c);
+    document.getElementById("coverageVal").textContent = c + "%";
+    document.getElementById("savedVal").textContent = saved + "%";
+    document.getElementById("remainVal").textContent = (100 - saved) + "%";
+    var host = document.getElementById("chart-whatif");
+    host.innerHTML = "";
+    var svg = el("svg", {viewBox:"0 0 560 64", "class":"chart", role:"img"}, host);
+    var t = el("title", {}, svg); t.textContent = "Modelled time saved vs remaining at "+c+"% coverage";
+    var wS = Math.max(0, (saved/100)*524), wR = 524 - wS;
+    if (wS > 2){ var r1 = el("rect", {x:0, y:10, width:wS, height:26, rx:5, "class":"bar"}, svg);
+      var tt1 = el("title", {}, r1); tt1.textContent = "Modelled time saved: "+saved+"%"; }
+    if (wR > 2){ var r2 = el("rect", {x:wS+ (wS>2?4:0), y:10, width:Math.max(2,wR-4), height:26, rx:5, "class":"bar gold"}, svg);
+      var tt2 = el("title", {}, r2); tt2.textContent = "Processing time remaining: "+(100-saved)+"%"; }
+    text(svg, 0, 56, "Green: modelled time saved · Gold: processing time remaining", 11.5, "start");
+  }
+  coverage.addEventListener("input", renderWhatif);
+  renderWhatif();
+
+  /* Tabs */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+  function activate(name, focus){
+    tabs.forEach(function(tb){
+      var on = tb.getAttribute("data-tab") === name;
+      tb.setAttribute("aria-selected", on ? "true" : "false");
+      document.getElementById("panel-" + tb.getAttribute("data-tab")).classList.toggle("active", on);
+      if (on && focus) tb.focus();
+    });
+  }
+  tabs.forEach(function(tb, i){
+    tb.addEventListener("click", function(){ activate(tb.getAttribute("data-tab"), false); });
+    tb.addEventListener("keydown", function(e){
+      var j = null;
+      if (e.key === "ArrowRight") j = (i+1) % tabs.length;
+      if (e.key === "ArrowLeft") j = (i-1+tabs.length) % tabs.length;
+      if (j !== null){ e.preventDefault(); activate(tabs[j].getAttribute("data-tab"), true); }
+    });
+  });
+
+  /* Channel filter — affects worked examples only */
+  var filter = document.getElementById("channelFilter");
+  var note = document.getElementById("filterNote");
+  var notes = {
+    all: "Showing examples from all channels. The filter only affects the worked examples on the first four tabs — the Real Data tab always shows the full aggregated picture.",
+    costco: "Showing Costco portal examples. Sections for other channels are hidden on this tab.",
+    shopify: "Showing Shopify examples. Sections for other channels are hidden on this tab.",
+    amazon: "Showing Amazon examples. Sections for other channels are hidden on this tab.",
+    unspecified: "Showing channel-unspecified examples. Sections for other channels are hidden on this tab."
+  };
+  function applyFilter(){
+    var v = filter.value;
+    document.querySelectorAll("[data-channel]").forEach(function(node){
+      node.classList.toggle("hidden-by-filter", v !== "all" && node.getAttribute("data-channel") !== v);
+    });
+    note.textContent = notes[v];
+  }
+  filter.addEventListener("change", applyFilter);
+  document.getElementById("resetFilters").addEventListener("click", function(){
+    filter.value = "all"; applyFilter(); activate("ops", false);
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+
+  /* Cin7 demo */
+  var stages = [
+    "Stage 1 — Cleanse: duplicates and malformed lines removed. Example order #RoboStore44551 passes clean.",
+    "Stage 2 — Filter: the order matches the Roborock-Store channel and is branched to Head Office.",
+    "Stage 2 (warehouse) — Warehouse selection: NSW/ACT order, Sydney bin stock is above 2, so Sydney warehouse is chosen.",
+    "Stage 3 — Push: stage set to Release To Pick – WMS, invoice date set to today, saved to Admin and read back — verified.",
+    "Stage 4.5 — Restock sweep: the order is a single-item order, checked in FIFO order — nothing further to release.",
+    "Stage 5 — Report: PDF report and index written, notification sent. Round complete for #RoboStore44551 (illustrative example only)."
+  ];
+  var demoStatus = document.getElementById("demoStatus");
+  var demoTimer = null, demoStep = 0;
+  document.getElementById("demoPlay").addEventListener("click", function(){
+    if (demoTimer) return;
+    demoStep = 0;
+    demoStatus.textContent = "Playing… walking the example order through the flow.";
+    demoTimer = setInterval(function(){
+      if (demoStep < stages.length){
+        demoStatus.textContent = stages[demoStep];
+        demoStep++;
+      } else {
+        clearInterval(demoTimer); demoTimer = null;
+        demoStatus.textContent = "Demo complete. #RoboStore44551 (illustrative, not a real order) passed all seven stages with every guardrail intact.";
+      }
+    }, 1400);
+  });
+  document.getElementById("demoReset").addEventListener("click", function(){
+    if (demoTimer){ clearInterval(demoTimer); demoTimer = null; }
+    demoStep = 0;
+    demoStatus.textContent = "Ready. The example order is waiting at Stage 1 — Cleanse.";
+  });
+})();
 </script>
 </body>
 </html>

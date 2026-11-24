@@ -1,0 +1,38 @@
+section,metric,value,unit,source_sheet,source_tab,as_of,note
+inquiries,total_items,254,items,Online Order Inquiries,total sheet,2026-11-24,Consolidated tracker; all items dated Nov 2026 or undated
+inquiries,completed,153,items,Online Order Inquiries,total sheet,2026-11-24,60% of 254
+inquiries,in_progress,70,items,Online Order Inquiries,total sheet,2026-11-24,28% of 254
+inquiries,pending,31,items,Online Order Inquiries,total sheet,2026-11-24,12% of 254
+inquiries,address_change_mentions,84,items,Online Order Inquiries,total sheet,2026-11-24,Keyword count; one item can match more than one topic
+inquiries,cancellation_mentions,37,items,Online Order Inquiries,total sheet,2026-11-24,Keyword count
+inquiries,tracking_mentions,15,items,Online Order Inquiries,total sheet,2026-11-24,Keyword count
+inquiries,open_list_items,53,items,Online Order Inquiries,Open,2026-11-24,On Hold 16; Wait for response 14; Urgent 13; Pending 4; Kitty to follow 3; Closed 2; unlabelled 1
+inquiries,closed_list_items,103,items,Online Order Inquiries,Closed,2026-11-24,All Closed
+deliveries,delivering_orders,135,orders,Costco Amazon x 360 delivery 2026,Delivering,2026-11-24,Amazon 69; Costco AU 44; Costco NZ 5; ALDI 2; unlabelled 15
+deliveries,delivering_units,23461,units,Costco Amazon x 360 delivery 2026,Delivering,2026-11-24,QTY column; covers Costco + Amazon + ALDI orders in this tab
+deliveries,delivered_orders_listed,246,orders,Costco Amazon x 360 delivery 2026,Delivered,2026-11-24,Costco AU 153; Costco 43; Amazon 24; Costco NZ 24; blank 2
+deliveries,delivered_marked_y,194,orders,Costco Amazon x 360 delivery 2026,Delivered,2026-11-24,79% of listed orders
+deliveries,cancelled_orders,9,orders,Costco Amazon x 360 delivery 2026,Cancelled,2026-11-24,Costco AU 6; Costco NZ 3
+deliveries,ra_collections,8,collections,Costco Amazon x 360 delivery 2026,RA Collecting,2026-11-24,7 Costco stores
+deliveries,ra_units_approved,122,units,Costco Amazon x 360 delivery 2026,RA Collecting,2026-11-24,Bookings Confirmed 6; Pending 2; collected 5
+returns,total_records,681,records,360 ILS RETURN LIST,Return List MEL/SYD/WA,2026-11-24,MEL 501; SYD 177; WA 3
+returns,total_units,1284,units,360 ILS RETURN LIST,Return List MEL/SYD/WA,2026-11-24,MEL 874; SYD 399; WA 11
+returns,back_into_stock,186,records,360 ILS RETURN LIST,Return List MEL/SYD/WA,2026-11-24,MEL 101; SYD 84; WA 1
+returns,received_in_cartoncloud,277,records,360 ILS RETURN LIST,Return List MEL,2026-11-24,MEL action value 'received in cc'
+returns,sent_to_technocity,31,records,360 ILS RETURN LIST,Return List MEL/SYD,2026-11-24,MEL 11; SYD 20
+returns,resend_to_customer,13,records,360 ILS RETURN LIST,Return List MEL,2026-11-24,
+returns,dispose,9,records,360 ILS RETURN LIST,Return List MEL/SYD,2026-11-24,MEL 5; SYD 4
+returns,roborock_records,442,records,360 ILS RETURN LIST,Return List MEL/SYD/WA,2026-11-24,By SKU/description family
+returns,segway_records,73,records,360 ILS RETURN LIST,Return List MEL/SYD/WA,2026-11-24,By SKU/description family
+returns,other_accessory_records,166,records,360 ILS RETURN LIST,Return List MEL/SYD/WA,2026-11-24,By SKU/description family
+returns,mel_peak_month,105,records,360 ILS RETURN LIST,Return List MEL,2026-11-24,Jan 2026
+returns,syd_nov_2026,53,records,360 ILS RETURN LIST,Return List SYD,2026-11-24,Nov 2026
+returns,short_supply_records,13,records,360 ILS RETURN LIST,LIT / RTN TBC / Partial delivery POD,2026-11-24,14 units; all via TollIPEC; Dec 2025-Feb 2026
+hohem,total_orders,34,orders,Hohem Amazon Order,FBM订单,2026-11-24,Nov 2025-Jun 2026
+hohem,completed_orders,32,orders,Hohem Amazon Order,FBM订单,2026-11-24,94% of 34
+hohem,cancelled_orders,2,orders,Hohem Amazon Order,FBM订单,2026-11-24,
+hohem,total_units,34,units,Hohem Amazon Order,FBM订单,2026-11-24,
+hohem,auspost_orders,23,orders,Hohem Amazon Order,FBM订单,2026-11-24,Australia Post
+hohem,startrack_orders,5,orders,Hohem Amazon Order,FBM订单,2026-11-24,StarTrack
+hohem,allied_express_orders,3,orders,Hohem Amazon Order,FBM订单,2026-11-24,Allied Express
+hohem,dec_2025_orders,16,orders,Hohem Amazon Order,FBM订单,2026-11-24,Peak month
