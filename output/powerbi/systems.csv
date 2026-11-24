@@ -1,13 +1,18 @@
 System,Stage,StageSort,Coverage
 Shopify,Order intake,1,Order source
 Client portals,Order intake,1,Order sources
-Costco portal,Order intake,1,Client portal
+Costco portal (Colladium),Order intake,1,Costco's dedicated ordering portal for 360 (Colladium EDI/B2B network); includes Costco Traffic prepaid login
 Cin7,Processing,2,Validate order details and release orders for warehouse
 CartonCloud,Warehouse / 3PL,3,Coordinate warehouse or 3PL fulfilment
 EWE,Tracking / delivery,4,Tracking including WA warehouse redirect. Tracking numbers unavailable in readable chats.
-AusPost,Tracking / delivery,4,Tracking and delivery
+AusPost,Tracking / delivery,4,Tracking and delivery — Merchant Portal and Business Support Portal
 DHL,Tracking / delivery,4,Tracking and delivery
-Excel,Analysis tools,5,Listed tool
-Power BI,Analysis tools,5,Listed tool
-Codex,AI tools,6,Python order-pushing automation
-Claude,AI tools,6,AI tool used. The skill can be adapted to SKILL.md format.
+Allied Express,Tracking / delivery,4,Track & Trace carrier tracking
+MyTeamGE (Team Global Express),Tracking / delivery,4,"International freight (Global Forwarding) tracking, rates, shipment creation and booking"
+SharePoint / OneDrive (360),Working sheets & records,5,"SOH & incoming stock, product management and shared documents"
+Google Sheets,Working sheets & records,5,"Working sheets: online order inquiries, ILS return list, air-sea freight tracking, Amazon orders, Costco Amazon delivery"
+Technocity SharePoint (Roborock RA),Working sheets & records,5,Roborock RA numbers issued (returns)
+Excel,Analysis tools,6,Listed tool
+Power BI,Analysis tools,6,Listed tool
+Codex,AI tools,7,Python order-pushing automation
+Claude,AI tools,7,AI tool used. The skill can be adapted to SKILL.md format.

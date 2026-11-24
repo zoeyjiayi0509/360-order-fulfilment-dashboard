@@ -1,12 +1,12 @@
 # Data dictionary
 
-All business observations come from the supplied summary of Zoey Chao’s ChatGPT/Codex chats, read 24 Nov 2026. Blank CSV cells mean unspecified. Dollar amounts retain the stated $ notation. The brief does not identify currency codes or transaction dates.
+Business observations come from the supplied summary of Zoey Chao’s ChatGPT/Codex chats, read 24 Nov 2026, and her work favorites export (Nov 2026), as noted below. Blank CSV cells mean unspecified. Dollar amounts retain the stated $ notation. The brief does not identify currency codes or transaction dates.
 
 ## channels
 
 | Column | Power BI type | Definition and source |
 |---|---|---|
-| Channel | Text | Costco portal is verified; Unspecified marks examples without a verified channel. |
+| Channel | Text | Costco portal is the only identified channel in the example orders. Unspecified marks examples without a verified channel. Shopify and Amazon come from Zoey’s work favorites export (Nov 2026) and have no example order rows linked in this dataset. |
 
 ## orders
 
@@ -58,16 +58,16 @@ All business observations come from the supplied summary of Zoey Chao’s ChatGP
 | Column | Power BI type | Definition and source |
 |---|---|---|
 | Mode | Text | Mode mentioned or named in the supplied freight scope. |
-| Coverage | Text | Qualitative freight or route evidence from the supplied brief. |
+| Coverage | Text | Qualitative freight or route evidence. Air and Sea reference the Google Sheet named Air Sea Freight Tracking in Zoey’s work favorites export (Nov 2026). Road coverage comes from the supplied brief. |
 
 ## systems
 
 | Column | Power BI type | Definition and source |
 |---|---|---|
-| System | Text | System or tool named in the supplied brief. |
+| System | Text | System or tool named in the supplied brief or Zoey’s work favorites export (Nov 2026). The export supplies the new Allied Express, MyTeamGE (Team Global Express), SharePoint / OneDrive (360), Google Sheets and Technocity SharePoint (Roborock RA) rows. Zoey confirmed the Costco portal uses Colladium. |
 | Stage | Text | Workflow grouping based on the stated function or tool type. |
 | StageSort | Whole number | Display order assigned for this report. |
-| Coverage | Text | Stated function or scope from the supplied brief. |
+| Coverage | Text | Stated function or scope from the supplied brief or Zoey’s work favorites export (Nov 2026), including the updated Costco and AusPost portal coverage. |
 
 ## automation_parameters
 
