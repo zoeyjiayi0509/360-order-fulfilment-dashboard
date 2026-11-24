@@ -1,0 +1,4 @@
+ExceptionID,Channel,Example,OriginalQty,CorrectedQty,ReturnedCartons,ReturnCost,Detail,Source
+E1,Unspecified,Quantity correction,10,6,,,Order quantity corrected from 10 to 6 units.,"real examples from Zoey's chats, Nov 2026"
+E2,Costco portal,Cancelled Costco order,,,,,Voided in Cin7 to release stock for H60.,"real examples from Zoey's chats, Nov 2026"
+E3,Unspecified,Damaged-goods return,,,1,8.6,360 paid the freight.,"real examples from Zoey's chats, Nov 2026"

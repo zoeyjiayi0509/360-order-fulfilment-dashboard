@@ -1,0 +1,12 @@
+{
+  "name": "360 International Trading",
+  "dataColors": ["#146B59", "#639F8E", "#C17A48", "#938A78", "#315753"],
+  "background": "#F3F1EB",
+  "foreground": "#172D2B",
+  "tableAccent": "#146B59",
+  "textClasses": {
+    "title": {"fontFace": "Georgia", "color": "#172D2B"},
+    "label": {"fontFace": "Segoe UI", "color": "#405A56"},
+    "callout": {"fontFace": "Segoe UI Semibold", "color": "#172D2B"}
+  }
+}

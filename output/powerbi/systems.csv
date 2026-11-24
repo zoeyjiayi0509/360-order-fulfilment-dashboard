@@ -1,0 +1,13 @@
+System,Stage,StageSort,Coverage
+Shopify,Order intake,1,Order source
+Client portals,Order intake,1,Order sources
+Costco portal,Order intake,1,Client portal
+Cin7,Processing,2,Validate order details and release orders for warehouse
+CartonCloud,Warehouse / 3PL,3,Coordinate warehouse or 3PL fulfilment
+EWE,Tracking / delivery,4,Tracking including WA warehouse redirect. Tracking numbers unavailable in readable chats.
+AusPost,Tracking / delivery,4,Tracking and delivery
+DHL,Tracking / delivery,4,Tracking and delivery
+Excel,Analysis tools,5,Listed tool
+Power BI,Analysis tools,5,Listed tool
+Codex,AI tools,6,Python order-pushing automation
+Claude,AI tools,6,AI tool used. The skill can be adapted to SKILL.md format.

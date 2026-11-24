@@ -1,0 +1,52 @@
+// Create each measure separately using Modeling > New measure.
+// Costco PO 1991533680 in Zoey's November chats, H60 line.
+Costco PO units =
+CALCULATE(SELECTEDVALUE(order_lines[Quantity]), KEEPFILTERS(order_lines[LineID] = "L1"))
+
+// November chat quantity correction, before.
+Original quantity =
+CALCULATE(SELECTEDVALUE(exceptions[OriginalQty]), KEEPFILTERS(exceptions[ExceptionID] = "E1"))
+
+// November chat quantity correction, after.
+Corrected quantity =
+CALCULATE(SELECTEDVALUE(exceptions[CorrectedQty]), KEEPFILTERS(exceptions[ExceptionID] = "E1"))
+
+// November chat damaged-goods return, cartons.
+Returned cartons =
+CALCULATE(SELECTEDVALUE(exceptions[ReturnedCartons]), KEEPFILTERS(exceptions[ExceptionID] = "E3"))
+
+// November chat damaged-goods return, total cost. 360 paid freight.
+Return cost =
+CALCULATE(SELECTEDVALUE(exceptions[ReturnCost]), KEEPFILTERS(exceptions[ExceptionID] = "E3"))
+
+// November chat standalone order value example.
+Order value example =
+CALCULATE(SELECTEDVALUE(orders[OrderValue]), KEEPFILTERS(orders[ExampleID] = "O2"))
+
+// November chat split order example, stated total.
+Split order value =
+CALCULATE(SELECTEDVALUE(orders[OrderValue]), KEEPFILTERS(orders[ExampleID] = "O3"))
+
+// November chat split order example, first component.
+Split component A =
+CALCULATE(SELECTEDVALUE(orders[ComponentA]), KEEPFILTERS(orders[ExampleID] = "O3"))
+
+// November chat split order example, second component.
+Split component B =
+CALCULATE(SELECTEDVALUE(orders[ComponentB]), KEEPFILTERS(orders[ExampleID] = "O3"))
+
+// Zoey's stated estimate. Use the exact card title "Zoey's estimate (~80%)".
+Zoey estimate =
+SELECTEDVALUE(automation_parameters[EstimateFraction])
+
+// Hypothetical input as a fraction. Default from the assumptions CSV.
+Scenario coverage =
+DIVIDE(SELECTEDVALUE(Coverage[Coverage], MAX(automation_parameters[CoverageDefaultPct])), 100)
+
+// What-if assumption: savings scale linearly with coverage. Anchor is Zoey's estimate (~80%).
+Modelled time saved =
+[Scenario coverage] * [Zoey estimate]
+
+// What-if complement as a share of baseline time. Anchor is Zoey's estimate (~80%).
+Modelled time remaining =
+1 - [Modelled time saved]
